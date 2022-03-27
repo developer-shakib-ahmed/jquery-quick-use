@@ -1,0 +1,82 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: tahoma;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+
+#scrollableTabs-wrapper .wrapper {
+  position: relative;
+  margin: 35px auto 0;
+  overflow: hidden;
+  padding: 10px 0;
+  height: 62px;
+  border: 1px solid #000;
+}
+
+#scrollableTabs-wrapper #scrollableTabs {
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  min-width: 3000px;
+  z-index: 9;
+}
+
+#scrollableTabs-wrapper .scroller {
+  position:absolute;
+  text-align:center;
+  cursor:pointer;
+  display:none;
+  padding:7px;
+  padding-top:11px;
+  white-space:no-wrap;
+  vertical-align:middle;
+  background-color:#fff;
+}
+
+#scrollableTabs-wrapper .scroller-left,
+#scrollableTabs-wrapper .scroller-right {
+  right: -40px;
+  color: #000;
+  background: #eee;
+  padding: 6px 0px;
+  width: 36px;
+  border-radius: 50%;
+  top: 13px;
+  transition: 0.25s;
+}
+
+#scrollableTabs-wrapper .scroller-left {
+  left: -40px;
+}
+
+#scrollableTabs-wrapper .scroller-left:hover,
+#scrollableTabs-wrapper .scroller-right:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+#scrollableTabs-wrapper {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+ul#scrollableTabs li a.nav-link {
+  background: #edecff;
+  margin: 0px 5px;
+  min-width: 101px;
+  text-align: center;
+  padding: 8px 5px;
+}
+
+ul#scrollableTabs li a.nav-link.active{
+  background: #007bff;
+}
