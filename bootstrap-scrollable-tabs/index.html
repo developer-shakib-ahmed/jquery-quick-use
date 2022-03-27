@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Scrollable Tabs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+  <div id="scrollableTabs-wrapper">
+    <div class="tab-scroller">
+      <div class="scroller scroller-left">
+        <i class="fa fa-caret-left"></i>
+      </div>
+    
+      <div class="scroller scroller-right">
+        <i class="fa fa-caret-right"></i>
+      </div>
+    </div>
+  
+    <div class="wrapper">
+      <!-- #scrollableTabs -->
+      <ul class="nav nav-pills" id="scrollableTabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="">Tab 1</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 2</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 3</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 4</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 5</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 6</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 7</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 8</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 9</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 10</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 11</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 12</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 13</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 14</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 15</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 16</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 17</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 18</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="9">Tab 19</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 20</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 21</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 22</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 23</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="">Tab 24</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="9">Tab 25</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    function scrollTabs(param){
+      let hidWidth;
+      let scrollBarWidths = 0;
+
+      let widthOfList = function(){
+        let itemsWidth = 0;
+        $(`#${param} li`).each(function(){
+          let itemWidth = $(this).width();
+          itemsWidth+=itemWidth;
+        });
+        return itemsWidth;
+      };
+
+
+      var widthOfHidden = function(){
+        return ( ( $(`#${param}-wrapper .wrapper`).outerWidth() ) -widthOfList() -getLeftPosi() ) - scrollBarWidths;
+      };
+
+      let getLeftPosi = function(){
+        return $(`#${param}`).position().left;
+      };
+
+
+      var reAdjust = function(){        
+        if (($(`#${param}-wrapper .wrapper`).outerWidth()) < widthOfList()) {
+          $(`#${param}-wrapper .scroller-right`).show();
+        }
+        else {
+          $(`#${param}-wrapper .scroller-right`).hide();
+        }
+        
+        if (getLeftPosi()<0) {
+          $(`#${param}-wrapper .scroller-left`).show();
+        }
+        else {
+          $(`#${param}-wrapper .item`).animate({left:"-="+getLeftPosi()+"px"},'slow');
+          $(`#${param}-wrapper .scroller-left`).hide();
+        }
+      }
+
+
+      reAdjust();
+
+      
+      $(window).on('resize',function(e){  
+        reAdjust();
+      });
+
+
+      let ScrollPosArray=[];
+
+
+      $(`#${param}-wrapper `+'.scroller-right').click(function() {
+        
+        $(`#${param}-wrapper `+'.scroller-left').fadeIn('fast');
+        
+        let widthOfHidden1 = (-widthOfHidden() < $('.wrapper').outerWidth()) ? widthOfHidden():-$('.wrapper').outerWidth();
+        
+        ScrollPosArray.push(widthOfHidden1);
+
+        // console.log(ScrollPosArray);
+        
+        $(`#${param}`).animate({left:"+="+widthOfHidden1+"px"},'slow',function(){
+          if(-widthOfHidden() <1 ){
+            $(`#${param}-wrapper `+'.scroller-right').fadeOut('fast');
+          }
+        });
+      });
+
+
+      $(`#${param}-wrapper `+'.scroller-left').click(function() {
+        if(ScrollPosArray.length !==0){
+          $(`#${param}`).animate({left:"-="+ScrollPosArray[ScrollPosArray.length -1]+"px"},'slow',function(){
+            ScrollPosArray.pop();
+
+            if(ScrollPosArray.length == 0){
+              $(`#${param}-wrapper `+'.scroller-right').fadeIn('fast');
+              $(`#${param}-wrapper `+'.scroller-left').fadeOut('fast');
+            }else{
+              $(`#${param}-wrapper `+'.scroller-right').fadeIn('fast');
+            }
+          });
+        }
+
+        // console.log(ScrollPosArray);
+      });
+
+    }
+
+    $(document).ready(function () {
+      scrollTabs("scrollableTabs");
+    });
+  </script>
+</body>
+</html>
