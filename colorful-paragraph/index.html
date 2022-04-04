@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Colorful Paragraph With jQuery</title>
+	<style type="text/css">
+		/* #D4000E #FF9800 #4CB050 #40A9FF #FF4011 #6441A5 */
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: tahoma;
+			font-size: 28px;
+			line-height: 40px;
+			color: #333;
+			letter-spacing: 1px;
+			background-color: #F2F2F2;
+		}
+		h1.title{
+			text-align: center;
+			margin-top: 25px;
+			font-size: 50px;
+		}
+		section{
+			width: 100%;
+			max-width: 900px;
+			margin: 50px auto;
+			padding: 15px 20px;
+			border:1px solid #666;
+			box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+			text-align: justify;
+			background-color: #fbfbfb;
+		}
+
+		section p span:nth-child(6n+1), h1.title span:nth-child(6n+1){
+			color: #D4000E;
+		}
+		section p span:nth-child(6n+2), h1.title span:nth-child(6n+2){
+			color: #FF9800;
+		}
+		section p span:nth-child(6n+3), h1.title span:nth-child(6n+3){
+			color: #4CB050;
+		}
+		section p span:nth-child(6n+4), h1.title span:nth-child(6n+4){
+			color: #40A9FF;
+		}
+		section p span:nth-child(6n+5), h1.title span:nth-child(6n+5){
+			color: #FF4011;
+		}
+		section p span:nth-child(6n+6), h1.title span:nth-child(6n+6){
+			color: #6441A5;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 class="title">Colorful Paragraph With jQuery</h1>
+	
+	<section class="para">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, ipsum blanditiis itaque soluta laboriosam cum sint sapiente eos est reprehenderit omnis enim nemo atque nihil officiis voluptatem ad libero illo error explicabo, fugit placeat distinctio dignissimos architecto! Ipsum quasi pariatur nihil, ullam ab rem, id officia recusandae veritatis, repellat ratione! Hridoy</p>
+	</section>
+
+	<section class="word">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, ipsum blanditiis itaque soluta laboriosam cum sint sapiente eos est reprehenderit omnis enim nemo atque nihil officiis voluptatem ad libero illo error explicabo, fugit placeat distinctio dignissimos architecto! Ipsum quasi pariatur nihil, ullam ab rem, id officia recusandae veritatis, repellat ratione!</p>
+	</section>
+	
+	<script type="text/javascript" src="jquery-min-3.1.1.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			var full_para = jQuery('section.para p').text();
+			var latter = full_para.replace( /(.)/g, '<span>$1</span>' );
+			jQuery('section.para p').html(latter);
+
+			var full_word = jQuery('section.word p').text();			
+			var word = full_word.split(' ');
+
+			var rep_word = '';
+			for( var i=0; i<word.length; i++ ){ rep_word += '<span>' + word[i] + '</span> '; }
+			jQuery('section.word p').html(rep_word);
+
+			var title = jQuery('h1.title').text();
+			jQuery('h1.title').html(title.replace( /(\w)/g, '<span>$1</span>' ));			
+		});
+	</script>
+</body>
+</html>

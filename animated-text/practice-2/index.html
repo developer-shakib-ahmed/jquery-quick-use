@@ -1,0 +1,38 @@
+<!-- https://codyhouse.co/demo/animated-headlines/index.html -->
+
+<!-- rotate-1, letters rotate-2, letters rotate-3, letters scale, letters type, loading-bar, clip is-full-width, slide, zoom, push -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animated Headlines</title>
+	<link rel="stylesheet" href="animated-headline.css">
+	<style type="text/css">
+		*{margin:0;padding:0;box-sizing: border-box;}
+		section.animated-headline {width: 100%;height: 100vh;background-color: #73ccd6;position: relative;overflow: hidden;}
+		section.animated-headline div.headline_wrap {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 100%;text-align: center;}
+		section.animated-headline h1{font-family: tahoma;font-size: 90px;line-height: 100px;}
+		section.animated-headline h1 i, section.animated-headline h1 em{font-style: normal;}
+	</style>
+</head>
+<body>
+
+	<section class="animated-headline">
+		<div class="headline_wrap">
+			<h1 class="cd-headline push">
+				<span>I'm</span>
+				<span class="cd-words-wrapper">
+					<b class="is-visible">Dreamer</b>
+					<b>Developer</b>
+					<b>Designer</b>
+					<b>Engineer</b>
+				</span>
+			</h1>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="animated-headline.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>High-Chart</title>
+	<style type="text/css">
+		g.highcharts-exporting-group, text.highcharts-credits{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+	<script type="text/javascript">
+		
+		// Build the chart
+		Highcharts.chart('container', {
+		    chart: {
+		        plotBackgroundColor: null,
+		        plotBorderWidth: null,
+		        plotShadow: false,
+		        type: 'pie'
+		    },
+		    title: {
+		        text: ''
+		    },
+		    tooltip: {
+		        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		    },
+		    plotOptions: {
+		        pie: {
+		            allowPointSelect: false,
+		            cursor: 'pointer',
+		            dataLabels: {
+		                enabled: false
+		            },
+		            showInLegend: false
+		        }
+		    },
+		    series: [{
+		        name: 'Brands',
+		        colorByPoint: true,
+		        data: [{
+		            name: 'Word of mouth referrals are main source of leads',
+		            y: 57.0
+		        }, {
+		            name: 'Inbound Marketing is main source of leads',
+		            y: 19.0
+		        }, {
+		            name: 'Events & Trade Shows are main source of leads',
+		            y: 5.0
+		        }, {
+		            name: 'Outbound Sales in main source of leads',
+		            y: 13.0
+		        }, {
+		            name: 'Other',
+		            y: 6.0
+		        }]
+		    }]
+		});
+	</script>
+</body>
+</html>

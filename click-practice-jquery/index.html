@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--[if lt IE 8]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+	</script>
+	<![endif]-->
+	<title>This is jQuery title</title>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+		<div class="container">
+				<div class="demo_panel">
+					<div class="all_equal red_color"></div>
+					<div class="all_equal green_color"></div>
+					<div class="all_equal orange_color"></div>
+					<div class="all_equal blue_color"></div>
+					<div class="all_equal pink_color"></div>
+					<div class="all_equal yallow_color"></div>
+					<div class="all_equal darkorchid_color"></div>
+					<div class="all_equal aqua_color"></div>
+					<div class="all_equal maroon_color"></div>
+
+					<div class="show_hide_botton_area">
+						<div class="show_botton">
+							<p>SHOW</p>
+						</div>
+						<div class="hide_botton">
+							<p>HIDE</p>
+						</div>
+					</div>
+
+					<div class="read_more_botton_area">
+						<div class="read_more_botton"><p>Read More</p></div>
+						<div class="Others_r_m_botton"><p>Read More</p></div>
+					</div>	
+					<div class="cross_botton">X</div>
+					<div style="display:none" class="cross_botton_two">X</div>
+					
+					<div style="display:none" class="demo_box">
+						<div class="color_panel">
+							<div class="change_color"></div>
+							<div class="change_color_two"></div>
+							<div class="change_color_three"></div>
+						</div>
+						<div class="bg_panel">
+							<div class="change_bg"></div>
+							<div class="change_bg_two"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="display">
+					<div class="all_play red_play">
+						<p>This is demo text for hide and show.</p>
+					</div>
+					<div class="all_play green_play">
+						<p>Shakib Abhijit Shohel Rubel Joyanto Taifur</p>
+					</div>
+					<div class="tooltip">TooL TiP</div>
+					<div class="all_play blue_play"></div>
+					<div class="all_play pink_play"></div>
+					<div class="all_play yallow_play"></div>
+					<div class="all_play darkorchid_play"></div>
+					<div class="all_play aqua_play"></div>
+					<!-- <div class="all_play maroon_play"></div> -->
+					
+				</div>
+		</div>
+
+
+			<!----Finish Html -->	
+
+		<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5shiv.js"></script><![endif]-->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery-1.10.2.min.js"><\/script>')</script>
+         <script type="text/javascript">
+			$(document).ready(function(){
+				$(".red_color").click(function(){
+					$(".red_play").addClass("other_color").removeClass("other_color_two");
+				});
+
+				$(".green_color").click(function(){
+					$(".red_play").addClass("other_color_two").removeClass("other_color");;
+				});
+
+				$(".orange_color").click(function(){
+					$(".red_play").removeClass("other_color other_color_two");
+				});				
+			});
+		</script>
+		<!---- End Add or Remove Class jQurey -->  
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".hide_botton").click(function(){
+					$(this).hide(300);
+				});
+
+				$(".show_botton").click(function(){
+					$(".hide_botton").show(300);
+				});				
+				
+				$(".read_more_botton").click(function(){
+					$(".green_play").animate({width:"90px"}, 6000);
+					$(this).hide();
+					$(".green_play").css('background','#117BA3');
+					$(".Others_r_m_botton").css('display','block');
+				});
+				
+				$(".Others_r_m_botton").click(function(){
+					$(".green_play").animate({width:"95%"}, 5000);
+					$(this).hide();
+					$(".green_play").css('background','green');
+					$(".read_more_botton").css('display','block');
+				});
+			});
+		</script>  
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".blue_color").click(function(){
+					$(this).hide(1000);
+					$(".blue_play").hide(100);
+				});
+				$(".pink_color").click(function(){
+					$(this).hide(1000);
+					$(".pink_play").hide(100);
+				});
+				$(".yallow_color").click(function(){
+					$(this).hide(1000);
+					$(".yallow_play").hide(100);
+				});
+				$(".darkorchid_color").click(function(){
+					$(this).hide(1000);
+					$(".darkorchid_play").hide(100);
+				});
+				$(".aqua_color").click(function(){
+					$(this).hide(1000);
+					$(".aqua_play").hide(100);
+				});	
+
+				$(".maroon_color").click(function(){
+					$(".yallow_play").show(1000);
+					$(".yallow_color").show(1000);
+				});	
+				
+				$(".maroon_color").click(function(){
+					$(".aqua_play").show(1000);
+					$(".aqua_color").show(1000);
+				});	
+
+				$(".maroon_color").click(function(){
+					$(".darkorchid_play").show(1000);
+					$(".darkorchid_color").show(1000);
+				});	
+				
+				$(".maroon_color").click(function(){
+					$(".blue_play").show(1000);
+					$(".blue_color").show(1000);
+				});
+
+				$(".maroon_color").click(function(){
+					$(".pink_play").show(1000);
+					$(".pink_color").show(1000);
+				});				
+			});
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".cross_botton").click(function(){
+					$(this).hide();
+					$(".cross_botton_two").css('display','block');	
+					$(".demo_box").show(500);
+				});
+				
+				$(".cross_botton_two").click(function(){
+					$(this).hide();
+					$(".cross_botton").show(10);
+					$(".demo_box").hide(500);
+				});
+			});
+		</script>
+
+		<script type="text/javascript"> 
+			$(document).ready(function(){
+				$(".blue_play").mouseenter(function(){
+					$(".tooltip").css('display','block');
+				});	
+				
+				$(".blue_play").mouseleave(function(){
+					$(".tooltip").css('display','none');
+				});
+			});
+		</script>
+</html>

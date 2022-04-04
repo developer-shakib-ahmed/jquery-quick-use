@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Tab-2 jQuery-Tabs-Manually</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div id="buttonsTop" class="buttons">
+			<button id="btn-1" class="active">Box 1</button>
+			<button id="btn-2">Box 2</button>
+		</div>
+
+		<div class="boxes">
+			<div class="box box-1">
+				<div id="inner-1" class="inner active"><p>Box inner 1 Box inner 1 Box inner 1 Box inner 1 Box inner 1 Box inner 1 </p></div>
+				<div id="inner-2" class="inner"><p>Box inner 2 Box inner 2 Box inner 2 Box inner 2 Box inner 2 Box inner 2 Box inner 2 </p></div>
+			</div>
+			<div class="box box-2">
+				<p>Box 2</p>
+			</div>
+		</div>
+
+	</div>
+	
+	<script type='text/javascript' src='https://bigganbaksho.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+	<script type='text/javascript' src='https://bigganbaksho.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+	<script type="text/javascript">
+
+
+		// Top button Actions
+		var activClass = 'active';
+
+		var inner1 = jQuery('#inner-1');
+		var inner2 = jQuery('#inner-2');
+
+		var topBtn1 = jQuery('#buttonsTop #btn-1');
+		var topBtn2 = jQuery('#buttonsTop #btn-2');
+
+		var effectLeft = 'inLeft';
+		var effectRight = 'inRight';
+
+
+		topBtn1.click(function(event) {
+			event.preventDefault();
+
+			inner1.addClass(activClass + ' ' + effectLeft);
+			inner2.removeClass(activClass + ' ' + effectRight);
+			
+			jQuery(this).addClass(activClass);
+			topBtn2.removeClass(activClass);
+		});
+
+		topBtn2.click(function(event) {
+			event.preventDefault();
+
+			inner2.addClass(activClass + ' ' + effectRight);
+			inner1.removeClass(activClass + ' ' + effectLeft);
+			
+			jQuery(this).addClass(activClass);
+			topBtn1.removeClass(activClass);
+		});
+
+	</script>
+</body>
+</html>

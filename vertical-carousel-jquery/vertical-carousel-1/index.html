@@ -1,0 +1,89 @@
+<!-- https://codepen.io/danbhala/pen/eNZrQW/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap Vertical Slider/Carousel</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+	<section id="s1">
+		<div class="bg-info">
+			<div class="container">
+				<div id="carousel-example-vertical" class="carousel vertical slide">
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<div class="row">
+								<div class="col-sm-2">
+									<div class="book">1</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">2</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">3</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">4</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">5</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">6</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">							
+							<div class="row">
+								<div class="col-sm-2">
+									<div class="book">7</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">8</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">9</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">10</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">11</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="book">12</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.carousel-inner -->
+
+					<!-- Controls -->
+					<a class="up carousel-control" href="#carousel-example-vertical" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="down carousel-control" href="#carousel-example-vertical" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div><!-- /#carousel-example-vertical -->
+			</div>
+		</div>
+	</section>
+	
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			// jQuery('.carousel').carousel({
+			//   interval: 3000
+			// });
+		});
+	</script>
+</body>
+</html>

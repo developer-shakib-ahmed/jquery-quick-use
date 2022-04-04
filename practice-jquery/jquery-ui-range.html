@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Class</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.theme.min.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+<style type="text/css">
+input{
+	width:300px;
+	padding: 8px 10px;
+	margin-bottom: 10px;
+}
+div#range{
+	margin: 30px 0px 30px 10px;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="jquery-ui-menu.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="#">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>jQuery-UI Range</h3></div>
+
+			<div class="buttons"></div><!-- End .buttons -->
+
+
+
+
+			<div class="display">
+				<div class="range_of_price"></div>
+				
+				<form action="">
+					<table>
+						<tr>
+							<td><b>Select Price Range: </b></td>
+							<td><div id="range"></div></td>
+						</tr>
+						<tr>
+							<td><b>Minimum Price: </b></td>
+							<td><input type="text" name="min_price" id="min_price"></td>
+						</tr>
+						<tr>
+							<td><b>Maximum Price: </b></td>
+							<td><input type="text" name="max_price" id="max_price"></td>
+						</tr>
+					</table>
+				</form>
+			</div><!-- End .display -->
+
+
+
+
+
+
+
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript" src="assets/jQuery-Ui/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+
+				var range_of_price = jQuery('div.range_of_price');
+				var range = jQuery('div#range');
+				var min_price = jQuery('input#min_price');
+				var max_price = jQuery('input#max_price');
+
+				range.slider({
+					range: true,
+					min: 0,
+					max: 100,
+					values: [5, 20],
+					step: 5,
+					slide: function(event, ui){
+						range_of_price.html('<b>Select Price Range: </b>'+ui.values[0]+' - '+ui.values[1]+' Tk.');
+						min_price.val( ui.values[0] );
+						max_price.val( ui.values[1] );
+					},
+				});
+
+				range_of_price.html( '<b>Select Price Range: </b>'+range.slider('values', 0)+' - '+range.slider('values', 1)+' Tk.' );
+				min_price.val( range.slider('values', 0) );
+				max_price.val( range.slider('values', 1) );
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

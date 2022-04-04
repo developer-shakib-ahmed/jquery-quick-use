@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Class</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.theme.min.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+<style type="text/css">
+div.display input[type="text"]{
+	width:280px;
+	padding: 10px 15px;
+	outline: 0;
+	border:2px solid #34495E;
+	display: block;
+}
+div.display input[type="submit"]{
+	background: #0769AC;
+	color:#fff;
+	padding: 10px 30px;
+	border:2px solid #34495E;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="jquery-ui-dialog-box.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="jquery-ui-menu.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>jQuery-UI Dialog Box</h3></div>
+
+			<div class="buttons"></div><!-- End .buttons -->
+
+
+
+
+			<div class="display">
+				<form action="">
+					<p>
+						<label title="Your Name" for="your_name">Your Name:
+							<input type="text" name="your_name" id="your_name" title="Enter Your Name">
+						</label>
+					</p>
+					<p>
+						<input type="submit" value="Send">
+					</p>
+				</form>
+			</div><!-- End .display -->
+
+
+
+
+
+
+
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript" src="assets/jQuery-Ui/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('div.display input[type="text"]').tooltip({
+					content: 'your name will be here.',
+					track:true,
+					show:{
+						delay:100,
+						duration:500,
+						effect:'slideDown',
+					},
+					hide:{
+						delay:100,
+						duration:500,
+						effect:'slideUp',
+					},
+				});
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

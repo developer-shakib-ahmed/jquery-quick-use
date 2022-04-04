@@ -1,0 +1,60 @@
+<!-- http://jsfiddle.net/mekwall/up4nu/ -->
+<!-- http://jsfiddle.net/pdzTW/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Detect Visible Section</title>
+	<style type="text/css">
+		div{
+			height: 500px;
+			width: 400px;
+			margin: 0px auto;
+			border: 1px solid red;
+			transition: 0.3s;
+		}
+
+		.current{
+		    background-color: lightgreen;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(document).scroll(function() {
+			    var cutoff = $(window).scrollTop();
+			    
+			    $('div').each(function(){
+			        if($(this).offset().top + $(this).height() > cutoff){
+			            $('div').removeClass('current');
+			            $(this).addClass('current');
+			            return false; // stops the iteration after the first one on screen
+			        }
+			    });
+			});
+		});
+	</script>
+</body>
+</html>

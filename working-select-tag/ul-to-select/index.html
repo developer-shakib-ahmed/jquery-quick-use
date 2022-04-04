@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Un-Order List To Select</title>
+</head>
+<body>
+	<ul class="top-menu">
+		<li><a href="home.html">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li>
+			<a class="selected" href="services.html">Services</a>
+			<ul class="sub">
+				<li><a href="#">Mobile</a></li>
+				<li><a href="#">Laptop</a></li>
+				<li><a href="#">Car Service</a></li>
+			</ul>
+		</li>
+		<li><a href="blog.html">Blog</a></li>
+		<li><a href="contact.html">Contact</a></li>
+	</ul>
+
+	<div id="navigation"></div>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			var list = jQuery('ul.top-menu');
+			var select = jQuery(document.createElement('select')).appendTo('#navigation').change(function(){
+				window.open(jQuery(this).val(), '_self');  // insertBefore('');
+			});
+			jQuery('>li a', list).each(function(){
+				var space = (jQuery(this).parent().parent().hasClass('sub')) ? '&nbsp;&nbsp;' : '';
+				var option = jQuery(document.createElement('option')).appendTo(select).val(this.href).html(space+jQuery(this).html());
+				if(jQuery(this).attr('class') === 'selected'){
+					option.attr('selected','selected');
+				}
+			});
+			list.hide();
+		});
+	</script>
+</body>
+</html>

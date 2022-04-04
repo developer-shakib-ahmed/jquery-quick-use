@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Remove Empty</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="jquery-add-elements.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="jquery-class.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>Element Remove / Empty On Click Event</h3></div>
+
+			<div class="buttons">
+				<button id="remove">Remove</button>
+				<button id="empty">Empty</button>
+			</div>
+
+			<div class="display">
+				<h2>Content</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia dicta cumque numquam sequi in, dolor magnam ipsum, consequatur nulla ad sed, tempora saepe ipsam ex exercitationem hic quisquam laudantium voluptatibus!</p>
+			</div>
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('#remove').click(function(){
+					jQuery('.display').remove();
+				});
+				jQuery('#empty').click(function(){
+					jQuery('.display').empty();
+				});
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

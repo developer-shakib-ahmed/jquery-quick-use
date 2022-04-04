@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Testing</title>
+</head>
+<body>
+
+	<center>
+		<select id="abc">
+			<option value="none">-- Select an option --</option>
+			<option value="a">A</option>
+			<option value="b">B</option>
+			<option value="c">C</option>
+			<option value="d">D</option>
+		</select>
+		<select id="xyz">
+			<option value="none">-- Select an option --</option>
+		</select>
+	</center>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			var abc, xyz, a, b, c, abcVal;
+
+			abc = jQuery('#abc');
+
+			xyz = jQuery('#xyz');
+
+			a = [ "Apple", "Airplane", "Anaconda" ];
+
+			b = [ "Ball", "Baby", "Banana" ];
+
+			c = [ "Cat", "Camera", "Car" ];
+
+			d = [ "DDD", "DDDD", "DDDDD" ];
+
+			abc.change(function(event) {
+
+				abcVal = jQuery(this).val();
+
+				switch (abcVal) {
+					case 'a':
+						abcVal = a;
+						break;
+					case 'b':
+						abcVal = b;
+						break;
+					case 'c':
+						abcVal = c;
+						break;
+					case 'd':
+						abcVal = d;
+						break;
+					default:
+						abcVal = [ "-- Select an option --" ];
+						break;
+				}
+
+				xyz.empty();
+
+				for (var i = 0; i < abcVal.length; i++) {
+
+					xyz.append( '<option value="'+ abcVal[i].toLowerCase() +'">'+ abcVal[i] +'</option>' );
+
+				}
+
+			});
+
+		});
+	</script>
+</body>
+</html>

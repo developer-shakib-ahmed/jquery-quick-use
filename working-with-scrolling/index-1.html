@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Working With Scroll 1</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		p{
+			width: 250px;
+			border:1px solid #000;
+			padding: 10px;
+			margin: 30px auto;
+		}
+		div.display{
+			position: fixed;
+			width: 150px;
+			height: 40px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: #333;
+			text-align: center;
+			top:5px;
+		}
+		div.display span{
+			display: inline-block;
+			margin: 5px;
+			padding: 5px;
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="display">
+		<span id="a1">0</span>
+		<span id="a2">0</span>
+	</div>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quos aliquid, impedit ut dolorem magnam, laboriosam a cum, dolorum nam velit eum, sunt ipsum. Quis quas, libero voluptatum excepturi facere facilis minus corporis beatae, incidunt quae laudantium explicabo, id, repudiandae expedita quaerat molestiae perspiciatis esse culpa dolorem in laboriosam reprehenderit et quia commodi. Sint fuga, in ex officia vitae beatae libero voluptatibus minima aliquid maxime quam nam consectetur quas dolore similique quibusdam laborum molestias necessitatibus est perspiciatis reiciendis. Tenetur tempore iure ea eveniet deleniti culpa sed in enim, temporibus. Quam eaque modi blanditiis voluptatem aliquid totam qui asperiores pariatur inventore.
+	</p>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quos aliquid, impedit ut dolorem magnam, laboriosam a cum, dolorum nam velit eum, sunt ipsum. Quis quas, libero voluptatum excepturi facere facilis minus corporis beatae, incidunt quae laudantium explicabo, id, repudiandae expedita quaerat molestiae perspiciatis esse culpa dolorem in laboriosam reprehenderit et quia commodi. Sint fuga, in ex officia vitae beatae libero voluptatibus minima aliquid maxime quam nam consectetur quas dolore similique quibusdam laborum molestias necessitatibus est perspiciatis reiciendis. Tenetur tempore iure ea eveniet deleniti culpa sed in enim, temporibus. Quam eaque modi blanditiis voluptatem aliquid totam qui asperiores pariatur inventore.
+	</p>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quos aliquid, impedit ut dolorem magnam, laboriosam a cum, dolorum nam velit eum, sunt ipsum. Quis quas, libero voluptatum excepturi facere facilis minus corporis beatae, incidunt quae laudantium explicabo, id, repudiandae expedita quaerat molestiae perspiciatis esse culpa dolorem in laboriosam reprehenderit et quia commodi. Sint fuga, in ex officia vitae beatae libero voluptatibus minima aliquid maxime quam nam consectetur quas dolore similique quibusdam laborum molestias necessitatibus est perspiciatis reiciendis. Tenetur tempore iure ea eveniet deleniti culpa sed in enim, temporibus. Quam eaque modi blanditiis voluptatem aliquid totam qui asperiores pariatur inventore.
+	</p>
+	
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery(window).scroll(function(event) {
+				var scrollTop = jQuery(window).scrollTop();
+				if( scrollTop == 100 ){
+					jQuery('span#a1').text( '100' );
+				}
+				else if( scrollTop == 200 ){
+					jQuery('span#a1').text( '200' );
+				}
+			});
+		});
+	</script>
+</body>
+</html>

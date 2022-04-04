@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tab-3</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+
+		body{
+			background-color: #f1f1f1;
+			font-size: 16px;
+			line-height: 24px;
+			font-family: tahoma;
+		}
+
+		div.container {
+		    width: 100%;
+		    max-width: 767px;
+		    margin: 0 auto;
+		}
+
+		section#tab div.container {
+		    padding: 25px;
+		    background-color: #fff;
+		    margin-top: 50px;
+		    border-radius: 10px;
+		    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		div#instaTabs ul {
+		    display: flex;
+		    justify-content: center;
+		    margin-bottom: 15px;
+		}
+
+		div#instaTabs ul li{
+			list-style: none;
+			margin: 0px 10px;
+		}
+
+		div#instaTabs ul li a{
+			display: block;
+			text-decoration: none;
+			color:#b3c022;
+		}
+
+		div#instaTabs ul li a:hover, div#instaTabs ul li a.active{
+			color:#532356;
+		}
+
+		div[id*="instaTabs-"]{
+			display: none;
+		}
+
+		div[id*="instaTabs-"].active{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<section id="tab">
+		<div class="container">
+			<div id="instaTabs">
+				<ul>
+					<li><a href="#instaTabs-1" class="active">Nunc tincidunt</a></li>
+					<li><a href="#instaTabs-2">Proin dolor</a></li>
+					<li><a href="#instaTabs-3">Aenean lacinia</a></li>
+				</ul>
+
+				<div id="instaTabs-1" class="active">
+					<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores facere, sapiente est officiis dignissimos, adipisci nobis? Possimus impedit officiis eos soluta, perferendis, esse, voluptatem perspiciatis sed minima omnis, delectus accusamus.</p>
+				</div>
+
+				<div id="instaTabs-2">
+					<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores facere, sapiente est officiis dignissimos, adipisci nobis? Possimus impedit officiis eos soluta, perferendis, esse, voluptatem perspiciatis sed minima omnis, delectus accusamus.</p>
+				</div>
+
+				<div id="instaTabs-3">
+					<p>Mauris eleifend est et turpis. Duis id erat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores facere, sapiente est officiis dignissimos, adipisci nobis? Possimus impedit officiis eos soluta, perferendis, esse, voluptatem perspiciatis sed minima omnis, delectus accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+<!-- 	<script type='text/javascript' src='https://bigganbaksho.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+	<script type='text/javascript' src='https://bigganbaksho.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script> -->
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		jQuery('div#instaTabs ul li a').each(function(){
+			jQuery(this).click(function(event) {
+				event.preventDefault();
+				jQuery('div#instaTabs ul li a').removeClass('active');
+				jQuery(this).addClass('active');
+
+				var hashUrl = jQuery(this).attr('href');
+				jQuery('div[id*="instaTabs-"]' ).removeClass('active');
+				jQuery('div#instaTabs ' + hashUrl).addClass('active');
+			});
+		});
+	});
+</script>
+</body>
+</html>

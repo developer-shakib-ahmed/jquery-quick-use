@@ -1,0 +1,172 @@
+<html>
+<head>
+	<title>validation form</title>
+	<style type="text/css">
+		.form-valiation{
+		    width: 450px;
+		    display: block;
+		    margin: 0 auto;
+		    background: #79554808;
+		    padding: 8px 15px 30px 15px;
+		    box-sizing: border-box;
+		    margin-top: 40px;
+		    border: 1px solid #ccc;
+		    border-radius: 3px;
+		    box-shadow: 5px 5px 19px 0px #ddd;
+		}
+		input{
+			outline: 0;
+		}
+		
+		.form-valiation form input{
+			display: block;
+		    width: 100%;
+		    border: 2px solid #9a9a9a54;
+		    padding: 10px 12px;
+		    box-sizing: border-box;
+		    margin-top: 22px;
+		    font-size: 20px;
+		    outline: 0;
+		    border-radius: 20px;
+		}
+		.form-valiation form input[type="submit"]{
+			cursor: pointer;
+		    width: inherit;
+		    font-size: 18px;
+		    text-transform: capitalize;
+		    letter-spacing: 0.6px;
+		    background: #ff5722;
+		    color: #f7e8e8;
+		    border: 0;
+		    padding: 0px 38px;
+		    border-radius: 25px;
+		    line-height: 2;
+		   
+		}
+		.form-valiation form input[type="submit"]:hover{
+			 box-shadow: 1px 1px 15px #ff5722;
+		}
+		#error_message{
+			color: #ff3232;
+		    font-size: 18px;
+		    margin-top: 12px;
+		    display: block;
+		    letter-spacing: 0.5px;
+		}
+		span.error.active{
+			transform: rotateY(8deg);
+		}
+		span.error{
+			color: #ff9800;
+		    font-size: 20px;
+		    margin: 5px;
+		    display: block;
+		    transition: all 0.4s ease 0s;
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="form-valiation">
+	<form action="" method="post">
+		<input type="email" id="valid_email">
+		<span id="error_email" class="error"></span>
+		<input type="text" id="valid_number">
+		<span id="error_number" class="error"></span>
+		<input type="text" id="valid_number2">
+		<span id="error_number2" class="error"></span>
+		<input type="submit" id="send_btn" value="send">
+	</form>
+</div>
+
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+
+//get selectors
+var get_valid_email = document.querySelector('form input#valid_email');
+var get_valid_number = document.querySelector('form input#valid_number');
+var get_valid_number2 = document.querySelector('form input#valid_number2');
+
+var error_email = document.querySelector('form span#error_email');
+var error_number = document.querySelector('form span#error_number');
+var error_number2 = document.querySelector('form span#error_number2');
+
+//error message
+var email_error = "Enter valid email";
+var number_error = "Enter valid phone number";
+
+//error colors
+error_color = "#FFC107";
+success_color = "#4caf50";
+
+//email validation (onkeyup effect)
+get_valid_email.onkeyup = email_validation;
+get_valid_email.onblur = email_validation;
+function email_validation(){
+	if(!get_valid_email.value.match(/^[A-Za-z0-9._%-]+@[A-Za-z0-9.]+\.[A-Za-z]{2,4}$/)){
+		get_valid_email.style.borderColor = error_color;
+		error_email.innerHTML = email_error;
+		return false;
+	}else{
+		get_valid_email.style.borderColor = success_color;
+		error_email.innerHTML = "";
+		return true;
+	}
+}
+
+//given only numeric number
+get_valid_number.onkeypress = allowOnlyNumber;
+get_valid_number2.onkeypress = allowOnlyNumber;
+function allowOnlyNumber(event){
+	return event.charCode>=48 && event.charCode<=57; //return only numeric number
+}
+//phone number validation (onkeyup effect)
+get_valid_number.onkeyup = number_validation;
+get_valid_number.onblur = number_validation;
+function number_validation(){
+	if(get_valid_number.value.length == 0){
+		get_valid_number.style.borderColor = error_color;
+		error_number.innerHTML = number_error;
+		return false;
+	}else if(!get_valid_number.value.match(/^[0-9]*$/)){
+		get_valid_number.style.borderColor = error_color;
+		error_number.innerHTML = number_error;
+		return false;
+	}else{
+		get_valid_number.style.borderColor = success_color;
+		error_number.innerHTML = "";
+		return true;
+	}
+}
+
+
+//phone number validation 2 (onkeyup effect)
+get_valid_number2.onkeyup = number_validation2;
+get_valid_number2.onblur = number_validation2;
+function number_validation2(){
+	if(get_valid_number2.value.length == 0){
+		get_valid_number2.style.borderColor = error_color;
+		error_number2.innerHTML = number_error;
+		return false;
+	}else if(!get_valid_number2.value.match(/^[0-9]*$/)){
+		get_valid_number2.style.borderColor = error_color;
+		error_number2.innerHTML = number_error;
+		return false;
+	}else{
+		get_valid_number2.style.borderColor = success_color;
+		error_number2.innerHTML = "";
+		return true;
+	}
+}
+
+//information send process;
+jQuery( "#send_btn" ).click( function(e){
+	if ( ! email_validation() || ! number_validation() || ! number_validation2() )
+		e.preventDefault(); email_validation(); number_validation(); number_validation2();
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+.label{
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Arial;
+    color:red;
+}
+.contents{
+    border: 1px dotted black;
+    padding: 5px;
+    width: 300px;
+}
+span.name{
+    color: #18B5F0;
+}
+.left{
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.right{
+    margin-left: 60px;
+    line-height:50px;
+}
+.clear{
+    clear: both;
+}

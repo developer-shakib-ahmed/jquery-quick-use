@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Element-Print-With-jQuery</title>	
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+
+
+<div id="dvContents" class="testing">
+   <div class="left">
+        <img alt="" src="https://www.aspsnippets.com/demos/1057/images/ASPSnippets.png" />
+    </div>
+    <div class="right">
+        <span class="label">ASPSnippets.com Sample page</span>
+    </div>
+    <div class="clear">
+    </div>
+    <hr />
+    <div class="contents">
+        <span class="label">Hello,
+            <br />
+            This is <span class="name">Mudassar Khan</span>.<br />
+            Hoping that you are enjoying my articles!</span>
+    </div>
+</div>
+<br />
+<input type="button" id="btnPrint" value="Print" />
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(function () {
+    jQuery("#btnPrint").click(function () {
+        var contents = jQuery("#dvContents").html();
+        var frame1 = jQuery('<iframe />');
+        frame1[0].name = "frame1";
+        frame1.css({ "position": "absolute", "top": "-1000000px" });
+        jQuery("body").append(frame1);
+        var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
+        frameDoc.document.open();
+        //Create a new HTML document.
+        frameDoc.document.write('<html><head><title>&nbsp;</title>');
+        frameDoc.document.write('</head><body>');
+        //Append the external CSS file.
+        frameDoc.document.write('<link href="style.css" rel="stylesheet" type="text/css" />');
+        //Append the DIV contents.
+        frameDoc.document.write(contents);
+        frameDoc.document.write('</body></html>');
+        frameDoc.document.close();
+        setTimeout(function () {
+            window.frames["frame1"].focus();
+            window.frames["frame1"].print();
+            frame1.remove();
+        }, 10);
+    });
+});
+</script>
+
+
+
+</body>
+</html>

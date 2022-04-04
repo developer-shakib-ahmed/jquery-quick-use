@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scroll Count</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		p{
+			width: 250px;
+			font-size: 16px;
+			line-height: 1.5;
+			font-family: verdana;
+			text-align: center;
+			border: 1px solid #333;
+			padding: 15px;
+			margin: 20px auto;
+		}
+		div.count_bar{
+			width: 0;
+			height: 10px;
+			background: #000;
+			position: fixed;
+			top: 0;
+			left: 0;
+			transition: 0.5s;
+		}
+		div.display{
+			position: fixed;
+			top: 20px;
+			left: 10px;
+			width: 150px;
+			height: 38px;
+			border: 1px solid #000;
+			text-align: center;
+			padding: 5px 0px;
+		}
+		div.display span{
+			display: inline-block;
+			padding: 5px 10px;
+			background-color: #000;
+			color: #ddd;
+			width: 46%;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	<div class="count_bar"></div>
+
+	<div class="display">
+		<span class="one">0</span>
+		<span class="two">0</span>
+	</div>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam blanditiis ad ipsum maxime veritatis modi repellat vitae, voluptatum ducimus, sed accusantium eligendi odit non assumenda animi quaerat fugiat, praesentium, debitis.</p>
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			var one = jQuery('div.display span.one');
+			var two = jQuery('div.display span.two');
+			var docHeight = jQuery(document).height() - jQuery(window).height();
+
+			console.log(docHeight);
+			
+			jQuery(window).scroll(function(){
+				var scrollPos = jQuery(window).scrollTop();
+				var calc = scrollPos * 100 / docHeight;
+
+				calc = Math.round(calc);
+
+				one.text(scrollPos);
+				two.text(calc);
+
+				jQuery('div.count_bar').css('width', calc + '%');
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Vertical Slider/Carousel</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<section id="s1">
+		<div class="container">
+			<ul class="books">
+				<li><div class="book" data-price="$99">01</div></li>
+				<li><div class="book" data-price="$130">02</div></li>
+				<li><div class="book" data-price="$105">03</div></li>
+				<li><div class="book" data-price="$123">04</div></li>
+				<li><div class="book" data-price="$123">05</div></li>
+				<li><div class="book" data-price="$123">06</div></li>
+				<li><div class="book" data-price="$123">07</div></li>
+				<li><div class="book" data-price="$123">08</div></li>
+				<li><div class="book" data-price="$123">09</div></li>
+				<li><div class="book" data-price="$123">10</div></li>
+				<li><div class="book" data-price="$123">11</div></li>
+				<li><div class="book" data-price="$123">12</div></li>
+				<li><div class="book" data-price="$123">13</div></li>
+				<li><div class="book" data-price="$123">14</div></li>
+				<li><div class="book" data-price="$123">15</div></li>
+				<li><div class="book" data-price="$123">16</div></li>
+				<li><div class="book" data-price="$123">17</div></li>
+				<li><div class="book" data-price="$123">18</div></li>
+				<li><div class="book" data-price="$123">19</div></li>
+				<li><div class="book" data-price="$123">20</div></li>
+				<li><div class="book" data-price="$123">21</div></li>
+				<li><div class="book" data-price="$123">22</div></li>
+				<li><div class="book" data-price="$123">23</div></li>
+				<li><div class="book" data-price="$123">24</div></li>
+				<li><div class="book" data-price="$123">25</div></li>
+				<li><div class="book" data-price="$123">26</div></li>
+				<li><div class="book" data-price="$123">27</div></li>
+				<li><div class="book" data-price="$123">28</div></li>
+				<li><div class="book" data-price="$123">29</div></li>
+				<li><div class="book" data-price="$123">30</div></li>
+				<li><div class="book" data-price="$123">31</div></li>
+				<li><div class="book" data-price="$123">32</div></li>
+				<li><div class="book" data-price="$123">33</div></li>
+				<li><div class="book" data-price="$123">34</div></li>
+				<li><div class="book" data-price="$123">35</div></li>
+				<li><div class="book" data-price="$123">36</div></li>
+				<li><div class="book" data-price="$123">37</div></li>
+				<li><div class="book" data-price="$123">38</div></li>
+				<li><div class="book" data-price="$123">39</div></li>
+				<li><div class="book" data-price="$123">40</div></li>
+				<li><div class="book" data-price="$123">41</div></li>
+				<li><div class="book" data-price="$123">42</div></li>
+				<li><div class="book" data-price="$123">43</div></li>
+				<li><div class="book" data-price="$123">44</div></li>
+				<li><div class="book" data-price="$123">45</div></li>
+				<li><div class="book" data-price="$123">46</div></li>
+				<li><div class="book" data-price="$123">47</div></li>
+				<li><div class="book" data-price="$788">48</div></li>
+			</ul>
+			<div class="controls">
+				<a href="#" id="minus">-</a>
+				<a href="#" id="plus">+</a>
+			</div>
+		</div>
+	</section>
+	
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			var books       = jQuery('ul.books');
+			var booksWidth  = books.width();
+			var booksLength = books.find('li').length;
+			var bookWidth   = books.find('li').width();
+			var bookPerRow  = Math.floor(booksWidth / bookWidth);
+			var bookRow     = Math.ceil(booksLength / bookPerRow);
+
+			var clickPlus = 1;
+			var clickMinus = 1;
+
+			jQuery('div.controls a#plus').click(function(event) {
+				event.preventDefault();
+				if(bookRow != clickPlus){
+					clickPlus++;
+					clickMinus--;
+					books.css('top', -143*(clickPlus-1));
+					console.log(clickMinus);
+				}
+			});
+
+			jQuery('div.controls a#minus').click(function(event) {
+				event.preventDefault();
+				if(clickPlus != clickMinus){
+					clickPlus--;
+					clickMinus++;
+					books.css('top', 143*(clickMinus-1));
+					console.log(clickMinus);
+				}
+			});
+			
+		});
+	</script>
+</body>
+</html>

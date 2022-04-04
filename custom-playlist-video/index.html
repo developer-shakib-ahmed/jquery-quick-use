@@ -1,0 +1,199 @@
+<!-- http://jsfiddle.net/Barzi/Jzs6B/9/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Playlist Video</title>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css' />
+	<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		section{
+			margin: 50px 0px;
+		}
+		ul#playlist {
+		    padding: 0;
+		    margin: 0;
+		}
+		ul#playlist li {
+		    cursor: pointer;
+		    list-style: none;
+		    margin: 10px 0px;
+		}
+		ul#playlist li:hover, ul#playlist li.active-video{
+		    color: blue;
+		}
+		video#videoarea {
+		    width: 100%;
+		    display: block;
+		}
+		.video-wrap, .tab-content {
+		    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+		    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+		    position: relative;
+		    padding: 15px;
+		    border-radius: 2px;
+		}
+		.video-wrap .video {
+		    position: relative;
+		    padding-top: 64%;
+		}
+		.video iframe {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 1;
+		}
+		div.video-info a#fbshareButton, div.video-info a#btn-prev, div.video-info a#btn-next {
+		    background-color: #3b5998!important;
+		    color: #fff!important;
+		    display: inline-block;
+		    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+		    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+		    padding: 14px 35px;
+		    border-radius: 25px;
+		    text-transform: uppercase;
+		    text-decoration: none;
+		    transition: 0.2s;
+		}
+		div.video-info a#fbshareButton:hover{
+			-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+			box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+			opacity: 0.9;
+		}
+		div.video-info a#btn-prev, div.video-info a#btn-next{
+			background-color: #fff!important;
+			color: #000!important;
+		}
+		div.video-info a#btn-next{
+			margin-left: 10px;
+		}
+		div.video-info a#btn-prev:hover, div.video-info a#btn-next:hover{
+			-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+			box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+		}		
+		h2.video-title {
+		    margin-bottom: 20px;
+		    font-size: 18px;
+		}
+		div.video-info {
+		    padding: 0px 12px 10px;
+		}
+	</style>
+</head>
+<body>
+	<section id="playlist">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="video-wrap">
+						<div class="video">
+							<iframe id="video-frame" width="100%" height="auto" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+						</div>
+						<div class="video-info">
+							<h2 class="video-title"></h2>
+							<div class="row">
+								<div class="col-sm-5">
+									<a id="fbshareButton" href="" target="_blank" class="btn-share"><i class="fa fa-facebook"></i> Share this video!</a>
+								</div>
+								<div class="col-sm-7 text-right">
+									<a href="#" id="btn-prev"><i class="fa fa-chevron-left"></i> Previous</a>
+									<a href="#" id="btn-next">Next <i class="fa fa-chevron-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+					    <li class="active"><a href="#videos" role="tab" data-toggle="tab">Videos</a></li>
+					    <li><a href="#quiz" role="tab" data-toggle="tab">Quiz</a></li>
+					    <li><a href="#smartbook" role="tab" data-toggle="tab">Smartbook</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+					    <div role="tabpanel" class="tab-pane active" id="videos">
+					    	<ul id="playlist">
+					    	    <li id="v-1" video-url="https://www.youtube.com/embed/eNHJjGkTLy4">SHORT TRY NOT TO LAUGH CHALLENGE</li>
+					    	    <li id="v-2" video-url="https://www.youtube.com/embed/uINilnFCKQ8">Short Funny Animals Vines</li>
+					    	    <li id="v-3" video-url="https://www.youtube.com/embed/7XBUhN9yrhA">Very Funny Animal Viral Video</li>
+					    	    <li id="v-4" video-url="https://www.youtube.com/embed/6vxPmtoXclo">YouTube's Funniest Animals</li>
+					    	</ul>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="quiz">
+					    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore officia expedita, ipsum tenetur maxime, dolor praesentium unde quasi dolorum illo voluptas perferendis optio asperiores exercitationem totam similique ab hic voluptates.</p>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="smartbook">
+					    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus impedit ad, eum quidem reprehenderit non, facere repellat deserunt aperiam perferendis ipsum ex est error ducimus nesciunt aspernatur nihil voluptas autem?</p>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+	<script type="text/javascript">
+		jQuery(function() {
+			var videoItems = jQuery("ul#playlist li").length;
+			jQuery('#video-frame')[0].src = jQuery("ul#playlist li").eq(0).attr("video-url");
+			jQuery('h2.video-title').text(jQuery("ul#playlist li").eq(0).text());
+			jQuery("ul#playlist li").eq(0).addClass('active-video');
+		    var currentVideo = parseInt(jQuery("ul#playlist li.active-video").attr('id').substring(2));
+		    var videoId = jQuery("ul#playlist li").eq(0).attr("video-url").substring(30);
+		    var shareLink = "https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v="+videoId+"?autoplay=1;rel=0&amp;amp;showinfo=0&amp;utm_medium=organic&amp;utm_source=subjectpage&amp;utm_campaign=sharethisvideo";
+			jQuery('div.video-info a#fbshareButton').attr('href', shareLink);
+
+		    jQuery("ul#playlist li").on("click", function() {
+		        jQuery('#video-frame')[0].src = jQuery(this).attr("video-url") + "?&autoplay=1";
+		        jQuery('h2.video-title').text(jQuery(this).text());
+		        jQuery(this).addClass('active-video').siblings().removeClass('active-video');
+		        currentVideo = parseInt(jQuery(this).attr('id').substring(2));
+	            videoId = jQuery(this).attr("video-url").substring(30);
+	            shareLink = "https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v="+videoId+"?autoplay=1;rel=0&amp;amp;showinfo=0&amp;utm_medium=organic&amp;utm_source=subjectpage&amp;utm_campaign=sharethisvideo";
+	        	jQuery('div.video-info a#fbshareButton').attr('href', shareLink);
+		    });
+
+		    jQuery('div.video-info a#btn-prev').click(function(event) {
+				event.preventDefault();
+				currentVideo--;
+				if(0 >= currentVideo){
+					currentVideo = 1;
+				}else{
+					jQuery('#video-frame')[0].src = jQuery("ul#playlist li#v-"+currentVideo).attr("video-url") + "?&autoplay=1";
+					jQuery('h2.video-title').text(jQuery("ul#playlist li#v-"+currentVideo).text());
+					jQuery("ul#playlist li#v-"+currentVideo).addClass('active-video').siblings().removeClass('active-video');
+		            videoId = jQuery("ul#playlist li#v-"+currentVideo).attr("video-url").substring(30);
+		            shareLink = "https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v="+videoId+"?autoplay=1;rel=0&amp;amp;showinfo=0&amp;utm_medium=organic&amp;utm_source=subjectpage&amp;utm_campaign=sharethisvideo";
+		        	jQuery('div.video-info a#fbshareButton').attr('href', shareLink);
+				}
+		    });
+
+		    jQuery('div.video-info a#btn-next').click(function(event) {
+				event.preventDefault();
+				currentVideo++;
+				if((videoItems+1) <= currentVideo){
+					currentVideo = videoItems;
+				}else{
+					jQuery('#video-frame')[0].src = jQuery("ul#playlist li#v-"+currentVideo).attr("video-url") + "?&autoplay=1";
+					jQuery('h2.video-title').text(jQuery("ul#playlist li#v-"+currentVideo).text());
+					jQuery("ul#playlist li#v-"+currentVideo).addClass('active-video').siblings().removeClass('active-video');
+		            videoId = jQuery("ul#playlist li#v-"+currentVideo).attr("video-url").substring(30);
+		            shareLink = "https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v="+videoId+"?autoplay=1;rel=0&amp;amp;showinfo=0&amp;utm_medium=organic&amp;utm_source=subjectpage&amp;utm_campaign=sharethisvideo";
+		        	jQuery('div.video-info a#fbshareButton').attr('href', shareLink);
+				}
+		    });
+		});
+	</script>
+</body>
+</html>

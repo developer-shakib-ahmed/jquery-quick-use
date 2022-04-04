@@ -1,0 +1,67 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+div.container{
+	margin: 10px auto;
+	width: 1170px;
+	overflow: hidden;
+	display: block;
+	padding: 25px;
+	border: 1px solid #000;
+}
+
+div.boxes {
+    overflow: hidden;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+div.boxes div.inner {
+    padding: 20px;
+    background: #ddd;
+    position: absolute;
+    width: 100%;
+    transform: translateX(100%);
+    top: 0;
+}
+
+div.boxes div.inner.active {
+    position: relative;
+    transform: translateX(0);
+}
+
+div#inner-2{
+	background: #999;
+}
+
+div.boxes div.box-1 {
+    border: 2px solid #000;
+    float: left;
+    width: 68%;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 35px;
+}
+
+div.boxes div.box-2 {
+    float: right;
+    height: 200px;
+    width: 30%;
+    border: 2px solid #50cc97;
+}
+
+div.buttons button{
+	display: inline-block;
+	padding: 5px 10px;
+	cursor: pointer;
+	margin-right: 8px;
+	outline: 0;
+}
+
+div#buttonsTop button.active {
+    border-color: red;
+}

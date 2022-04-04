@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Effect Methods</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><img src="assets/img/jquery.png" alt="jquery logo">Practice Display <a title="Next" href="jquery-add-elements.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>Hide / Show Effect Methods On Click Event</h3></div>
+
+			<div class="buttons">
+				<button id="hide">Hide</button>
+				<button id="show">Show</button>
+				<button id="toggle">Toggle</button>
+				<button id="fadeOut">FadeOut</button>
+				<button id="fadeIn">FadeIn</button>
+				<button id="fadeToggle">FadeToggle</button>
+				<button id="slideUp">SlideUp</button>
+				<button id="slideDown">SlideDown</button>
+				<button id="slideToggle">SlideToggle</button>
+				<button id="dequeue">Dequeue</button>
+			</div>
+
+			<div class="display">
+				<h3>This is our content display</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur excepturi aliquam quaerat aspernatur, nihil omnis eaque rem voluptate expedita illo velit ex eius unde neque necessitatibus magnam quisquam, beatae aliquid voluptas iste autem! Dicta laudantium minus voluptatum. Eaque, distinctio accusamus maxime repellat aspernatur ducimus, doloribus vero, perspiciatis error incidunt, voluptate!</p>
+				<p>Eaque, distinctio accusamus maxime repellat aspernatur ducimus, doloribus vero, perspiciatis error incidunt, voluptate!</p>
+			</div>
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				var display = jQuery('.display');
+
+				jQuery('#hide').click(function(){
+					display.hide();
+				});
+				// end .hide();
+
+				jQuery('#show').click(function(){
+					display.show();
+				});
+				// end .show();
+
+				jQuery('#toggle').click(function(){
+					display.toggle();
+				});
+				// end .toggle();
+
+				jQuery('#fadeOut').click(function(){
+					display.fadeOut();
+				});
+				// end .fadeOut();
+
+				jQuery('#fadeIn').click(function(){
+					display.fadeIn();
+				});
+				// end .fadeIn();
+
+				jQuery('#fadeToggle').click(function(){
+					display.fadeToggle();
+				});
+				// end .fadeToggle();
+
+				jQuery('#slideUp').click(function(){
+					display.slideUp();
+				});
+				// end .slideUp();
+
+				jQuery('#slideDown').click(function(){
+					display.slideDown();
+				});
+				// end .slideDown();
+
+				jQuery('#slideToggle').click(function(){
+					display.slideToggle();
+				});
+				// end .slideToggle();
+
+			    $("#dequeue").click(function(){
+			        display.animate({width: 450+'px'}, 'slow');
+			        display.css('background-color', '#f1f1f1');
+			        display.queue(function () {
+			            display.css('background-color', '#ddd');  
+			            display.dequeue();
+			        	display.animate({width: 814+'px'}, 'fast');
+			        });
+			    });
+
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

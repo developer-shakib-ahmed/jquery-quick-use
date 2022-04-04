@@ -1,0 +1,40 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+div#Content{
+	border:1px solid #aaa;
+}
+
+div.sidebar__inner{
+    border: 1px solid #ddd;
+    padding: 0px 10px;
+}
+
+div.display{
+	position: fixed;
+	top: 5px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 999999;
+}
+
+div.display span{
+	display: inline-block;
+	padding: 5px 10px;
+	background: #222;
+	color: #ddd;
+	margin: 5px;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+footer.jumbotron {
+    margin-bottom: 0;
+    height: 750px;
+}

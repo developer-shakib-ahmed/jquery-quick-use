@@ -1,0 +1,130 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-size: 16px;
+	line-height: 1.7;
+	color:#222;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background: #fbfbfb;
+}
+p{
+    margin-top: 14px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+div.wrap{
+	width: 71%;
+	margin: 0px auto;
+	overflow: hidden;
+	display: block;
+}
+
+div.header {
+    background: #34495e;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #15181B;
+    box-shadow: 0px 0px 2px 0px #3786d6;
+}
+div.header h1{
+    text-shadow: 0px 1px 3px #848484;
+    color: #dedede;
+}
+div.header h1 img {
+    vertical-align: middle;
+    margin-right: 15px;
+    height: 65px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #383838;
+}
+div.header h1 a {
+    display: inline-block;
+    border: 1px solid #dedede;
+    padding: 4px 15px;
+    margin-top: 14px;
+    color: #dedede;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 2px;
+    font-family: monospace;
+}
+div.header h1 a:first-child{
+    float: left;
+}
+div.header h1 a:last-child{
+    float: right;
+}
+div.header h1 a:hover {
+    background: #0768ac;
+}
+
+div.content{
+    margin: 10px 0px;
+    border: 5px solid #34495e;
+    min-height: 438px;
+    background: #f1f1f1;
+    padding: 10px;
+}
+div.content div.work_title {
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+div.content div.work_title h3 {
+    display: inline-block;
+    padding: 0px 8px;
+    border-bottom: 1px dashed #bbbbbb;
+    color: #0769ad;
+    line-height: 1;
+    padding-bottom: 5px;
+}
+div.buttons {
+    text-align: center;
+}
+div.buttons button {
+    display: inline-block;
+    outline: 0;
+    border: 1px solid #333;
+    padding: 8px 15px;
+    color: #0769ad;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px #fff;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background: #ddd;
+}
+div.buttons button:hover,
+div.buttons button:focus{
+    background: #f1f1f1;
+}
+
+div.display {
+    border: 1px solid #0769ad;
+    padding: 15px;
+    margin-top: 15px;
+    background: #ddd;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+div.footer{
+	background: #34495e;
+	padding: 20px 15px;
+	text-align: center;
+    border: 1px solid #15181B;
+    box-shadow: 0px 0px 2px 0px #3786d6;
+}
+div.footer a{
+
+}
+div.footer a img{
+	vertical-align: middle;
+	margin-right: 15px;
+}

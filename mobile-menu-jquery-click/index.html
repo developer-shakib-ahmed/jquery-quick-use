@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: arial;
+			font-size: 16px;
+			line-height: 24px;
+		}
+		div.menu {
+		    width: 300px;
+		    margin: 0px auto 0;
+		    background-color: #ddd;
+		    padding: 10px;
+		    height: 100vh;
+		    overflow-x: hidden;
+		    overflow-y: scroll;
+		    position: fixed;
+		    left: 0;
+		    top: 60px;
+		    padding-bottom: 70px;
+		}
+		ul{
+			margin:0;
+			padding:0;
+		}
+		ul li{
+			list-style: none;
+		}
+		ul li a{
+			text-decoration: none;
+			border-top:1px solid #f1f1f1;
+			display: block;
+			padding: 10px 0px;
+			color:#333;
+		}
+		ul li:last-child a{
+			border-bottom:1px solid #f1f1f1;
+		}
+
+		ul ul {
+		    padding: 10px;
+		    background-color: #e8e8e8;
+		    display: none;
+		}
+		li.open> ul{
+			display: block;
+		}
+
+		ul li > ul ul {
+		    background-color: #c7c7c7;
+		}
+		ul li > ul ul li > ul {
+		    background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li>
+				<a href="#">About</a>
+				<ul>
+					<li><a href="#">Dropdown ></a></li>
+				</ul>
+			</li>
+			<li><a href="">Blog</a></li>
+			<li>
+				<a href="#">Contact</a>
+				<ul>
+					<li>
+						<a href="#">Dropdown ></a>
+						<ul>
+							<li><a href="#">Dropdown  >></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Dropdown ></a>
+						<ul>
+							<li>
+								<a href="#">Dropdown >></a>
+								<ul>
+									<li><a href="#">Dropdown >>></a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">Product</a></li>
+			<li><a href="#">News</a></li>
+			<li><a href="#">Gallery</a></li>
+			<li><a href="#">Portfolio</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="http://udvashsys.wpdevelop.org/assets/js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			$('ul li a').click(function(event) {
+				if( $(this).attr('href') == '#' || $(this).attr('href') == '' ){
+					event.preventDefault();
+					$(this).parent().first().toggleClass('open');
+					$(this).parent().siblings().removeClass('open');
+					$(this).parent().find('.open').removeClass('open');
+				}else{
+					return true;
+				}
+			});
+			
+		});
+	</script>
+</body>
+</html>

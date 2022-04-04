@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>jQuery Side Menu</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			font-family: sans-serif;
+			font-size: 16px;
+			line-height: 24px;
+			background-color: #fff;
+			color: #333;
+		}
+
+		header {
+		    overflow: hidden;
+		    padding: 15px 20px;
+		    background-color: #f9f9f9;
+		    border-bottom: 1px solid rgba(0,0,0,0.05);
+		}
+
+		div#menuTrigger{
+			width: 30px;
+			height: 30px;
+			background-color: #789;
+			border-radius: 2px;
+			cursor: pointer;
+			float: right;
+		}
+
+		div#sideMenuBox {
+		    position: fixed;
+		    top: 61px;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 9;
+		    opacity: 0;
+		    visibility: hidden;
+		    transition: 0.2s;
+		}
+
+		div#sideMenuBox.active {
+		    opacity: 1;
+		    visibility: visible;
+		    background-color: #F0F4F8;
+		}
+
+		div#sideMenu {
+		    width: 150px;
+		    right: -150px;
+		    top: 0;
+		    background-color: #f9f9f9;
+		    border-left: 1px solid rgba(0,0,0,0.05);
+		    height: 100%;
+		    padding: 15px;
+		    overflow: scroll;
+		    position: absolute;
+		    z-index: 9;
+		    transition: 0.3s;
+		}
+
+		div#sideMenuBox.active div#sideMenu {
+			right: 0;
+		}
+
+		ul.menu {
+		    margin: 0;
+		    padding: 0 0 90px;
+		}
+
+		ul.menu li{
+		    list-style: none;
+		}
+
+		ul.menu li a{
+		    list-style: none;
+		    text-decoration: none;
+		    display: block;
+		    padding: 2px 10px 2px 25px;
+		    color: #333;
+		    transition: 0.3s;
+		    font-size: 15px;
+		    position: relative;
+		}
+
+		ul.menu li a:before{
+			content: "";
+			position:absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 5px;
+			width: 14px;
+			height: 14px;
+			background-color: #789;
+		}
+
+		ul.menu li a:hover, ul.menu > li.active > a{
+			background-color: #eee;
+		}
+
+		ul.menu li ul.subMenu {
+		    padding-left: 15px;
+		    height: 0;
+		    overflow: hidden;
+		}
+
+		ul.menu li ul li a {
+		    padding-left: 18px;
+		    margin: 3px 0px;
+		    font-size: 14px;
+		}
+
+		ul.menu li ul li a:before {
+		    width: 6px;
+		    height: 6px;
+		    border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div id="menuTrigger"></div>
+	</header>
+
+	<div id="sideMenuBox">
+		<div id="sideMenu">
+			<ul class="menu">
+				<li>
+					<a href="#">Menu Item 1</a>
+					<ul>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 2</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Menu Item 2</a>
+					<ul>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 3</a></li>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 3</a></li>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 3</a></li>
+					</ul>
+				</li>
+				<li><a href="https://www.google.com">Menu Item 3</a></li>
+				<li>
+					<a href="#">Menu Item 4</a>
+					<ul>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 4</a></li>
+						<li><a href="#">Sub Item 3</a></li>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="https://www.facebook.com">Sub Item 4</a></li>
+						<li><a href="#">Sub Item 3</a></li>
+					</ul>
+				</li>
+				<li><a href="https://www.google.com">Menu Item 5</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+
+			var ulMenu = jQuery('ul.menu');
+			var menuList = ulMenu.find('li');
+			menuList.each(function(index, el) {
+				if(el.lastElementChild.nodeName == "UL"){
+					jQuery(this).addClass("hasChild");
+					jQuery(this).find('ul').addClass("subMenu");
+				}
+			});
+
+			jQuery(document).click(function(event) {
+				var eL = event.target;
+				var sideMenu = jQuery('div#sideMenuBox');
+				if( eL.id == 'menuTrigger' || eL.id == 'sideMenuBox' ){
+					event.preventDefault();
+					sideMenu.toggleClass("active");
+					sideMenu.find("li.active").removeClass('active');
+					sideMenu.find("ul.subMenu").stop().animate({height: 0}, 500);
+
+				}else if( sideMenu.is(eL) || sideMenu.has(eL).length > 0 ){
+					return true;
+				}else{
+					sideMenu.removeClass("active");
+					sideMenu.find("li.active").removeClass('active');
+					sideMenu.find("ul.subMenu").stop().animate({height: 0}, 500);
+				}
+			});
+
+			var menuLink = ulMenu.find('li a');
+			menuLink.click(function(event) {
+				if(jQuery(this).parent().hasClass("hasChild")){
+					event.preventDefault();
+					var subMenu = jQuery(this).next()[0];
+					if(subMenu.className == "subMenu"){
+						menuLink.parent().removeClass('active');
+						jQuery(this).parent().addClass('active');
+						jQuery("." + subMenu.className).stop().animate({height: 0}, 500);
+						var element = jQuery(this).parent().find("." + subMenu.className);
+						var currentHeight = element.height();
+						var autoHeight = element.css({height: "auto"}).height();
+						element.height(currentHeight);
+						element.stop().animate({height: autoHeight}, 500);
+						if(currentHeight > 0){
+							element.stop().animate({height: 0}, 500);
+						}
+					}
+				}else{
+					return true;
+				}
+			});
+		});
+	</script>
+</body>
+</html>

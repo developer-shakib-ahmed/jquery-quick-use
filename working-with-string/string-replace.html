@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String Replace</title>
+</head>
+<body>
+	<h1 id="en"></h1>
+	<h1 id="bn"></h1>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		EN = document.getElementById('en');
+
+		bnNum = ['১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯', '০'];
+		a = 1231; // Number
+		b = String(a); // String
+		c = b.split(''); // Array
+
+		// EN.innerHTML=typeof c;
+
+		z = /1/gi;
+		EN.innerHTML=b.replace(z, bnNum[1]);
+
+		d = '';
+
+		// for (var i = 0; i < c.length; i++) {
+
+		// 	d += c.replace(/1/g, bnNum[i]);
+		// 	EN.innerHTML=d;
+		// }
+
+		jQuery(document).ready(function(){
+			var EN = jQuery('h1#en');
+			var BN = jQuery('h1#bn');
+
+			var enNum = ['1', '2' , '3', '4', '5', '6', '7', '8', '9', '0'];
+			var bnNum = ['১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯', '০'];
+
+			var getEn = '';
+			for (var i = 0; i < enNum.length; i++) {
+				getEn += bnNum[i];
+			}
+			// EN.text(getEn);
+		});
+	</script>
+</body>
+</html>

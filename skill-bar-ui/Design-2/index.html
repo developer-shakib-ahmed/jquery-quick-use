@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Skills</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		body {
+		    background: #333;
+		    display: flex;
+		    flex-wrap: wrap;
+		    align-items: center;
+		    height: 100vh;
+		    font-family: tahoma;
+		}
+		div#skillCircle{
+			width: 100%;
+			max-width: 1170px;
+			margin: 0px auto;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			padding: 80px 0px; 
+		}
+		div#skillCircle div.card{
+			flex: 0 0 32%;
+			text-align: center;
+			border:1px solid #444;
+			padding: 80px 0px;
+			background: #1b1b1b;
+			border-radius: 10px;
+			transition: 0.3s;
+			margin-bottom: 25px;
+		}
+		div#skillCircle div.card:hover{
+			transform: translateY(-10px);
+			box-shadow: 0 15px 35px #1b1b1b;
+			border:1px solid #1b1b1b;
+		}
+		div#skillCircle div.percent{
+			position: relative;
+		}
+		div#skillCircle div.number {
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		    z-index: 10000;
+		}
+		div#skillCircle div.number h2{
+			color: #777;
+			transition: all 0.3s ease-in-out;
+		}
+		div#skillCircle div.card:hover div.number h2{
+			font-size: 40px;
+			color: #ddd;
+		}
+		div#skillCircle div.number h2 span{
+			font-size: 50%;
+		}
+		div#skillCircle svg {
+		    position: relative;
+		    width: 150px;
+		    height: 150px;
+		    z-index: 1000;
+		    box-shadow: inset 0px 0px 50px #000;
+		    border-radius: 50%;
+		    transform: rotate(-90deg);
+		}
+		div#skillCircle circle{
+			width: 100%;
+			height: 100%;
+			fill: none;
+			stroke: #191919;
+			stroke-width: 10;
+			stroke-linecap: round;
+			transform: translate(5px, 5px);
+		}
+		div#skillCircle circle:nth-child(2){
+			stroke-dasharray: 440;
+			stroke-dashoffset: 440;
+		}
+		div#skillCircle div.card:nth-child(1) circle{
+			stroke: #561200;
+		}
+		div#skillCircle div.card:nth-child(1) circle:nth-child(2){
+			stroke-dashoffset: calc(440 - (440 * 90) / 100);
+			stroke: #DD4B25;
+		}
+		div#skillCircle div.card:nth-child(2) circle{
+			stroke: #19223c;
+		}
+		div#skillCircle div.card:nth-child(2) circle:nth-child(2){
+			stroke-dashoffset: calc(440 - (440 * 85) / 100);
+			stroke: #36487E;
+		}
+		div#skillCircle div.card:nth-child(3) circle{
+			stroke: #002946;
+		}
+		div#skillCircle div.card:nth-child(3) circle:nth-child(2){
+			stroke-dashoffset: calc(440 - (440 * 90) / 100);
+			stroke: #0769AD;
+		}
+
+		div#skillCircle h2.title{
+			color: #999;
+			font-weight: bold;
+			font-size: 18px;
+			margin-top: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div id="skillCircle"  class="wrap">
+		<div class="card">
+			<div class="box">
+				<div class="percent">
+					<svg>
+						<circle cx="70" cy="70" r="70"></circle>
+						<circle cx="70" cy="70" r="70"></circle>
+					</svg>
+					<div class="number">
+						<h2>90<span>%</span></h2>
+					</div>
+				</div>
+				<h2 class="title">HTML5</h2>
+			</div>
+		</div>
+		<div class="card">
+			<div class="box">
+				<div class="percent">
+					<svg>
+						<circle cx="70" cy="70" r="70"></circle>
+						<circle cx="70" cy="70" r="70"></circle>
+					</svg>
+					<div class="number">
+						<h2>85<span>%</span></h2>
+					</div>
+				</div>
+				<h2 class="title">PHP</h2>
+			</div>
+		</div>
+		<div class="card">
+			<div class="box">
+				<div class="percent">
+					<svg>
+						<circle cx="70" cy="70" r="70"></circle>
+						<circle cx="70" cy="70" r="70"></circle>
+					</svg>
+					<div class="number">
+						<h2>90<span>%</span></h2>
+					</div>
+				</div>
+				<h2 class="title">jQuery</h2>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

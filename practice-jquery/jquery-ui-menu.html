@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Class</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.theme.min.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+<style type="text/css">
+.ui-menu .ui-menu-item-wrapper {
+    padding: 3px 1em 3px 1em;
+}
+ul#menu{}
+ul#menu > li{
+	display: inline;
+}
+ul#menu li a{
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="jquery-ui-tooltip.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="jquery-ui-range.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>jQuery-UI Dialog Box</h3></div>
+
+			<div class="buttons"></div><!-- End .buttons -->
+
+
+
+
+			<div class="display">
+				<div class="menu_area">
+					<ul id="menu">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Services</a>
+							<ul>
+								<li><a href="#">Service One</a></li>
+								<li><a href="#">Service Two</a></li>
+								<li><a href="#">Service Three</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div><!-- End .display -->
+
+
+
+
+
+
+
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript" src="assets/jQuery-Ui/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('ul#menu').menu();
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>
