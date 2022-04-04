@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Class</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="assets/jQuery-Ui/jquery-ui.theme.min.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="scroll-to-top.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="jquery-ui-tooltip.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>jQuery-UI Dialog Box</h3></div>
+
+			<div class="buttons"></div><!-- End .buttons -->
+
+
+
+
+			<div id="dialog_box" title="This is the title...">
+				<h2>Your title goes here...</h2>
+			</div>
+
+
+
+
+
+
+
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript" src="assets/jQuery-Ui/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('div#dialog_box').dialog();
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

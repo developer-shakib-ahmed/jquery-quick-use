@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Class</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+<style type="text/css">
+div.display h3{
+	margin-bottom: 20px;
+	color:#0769AD;
+}
+table tr td{
+	vertical-align: top;
+}
+form label{
+	cursor: pointer;
+}
+form span{
+	color:red;
+}
+form input, form textarea{
+	width:250px;
+	padding: 8px 10px;
+	margin-bottom: 8px;
+	outline: 0;
+	border:1px solid #0769AD;
+	box-shadow: 0px 0px 0px #0769AD;
+	transition: all 0.2s ease 0s;
+}
+form input:hover, form textarea:hover, form input:focus, form textarea:focus{
+	box-shadow: 0px 0px 2px #0769AD;
+}
+form textarea{
+	resize:horizontal;
+	height: 75px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+form input[type="submit"]{
+	width:auto;
+	cursor: pointer;
+}
+form .error{
+	border:1px solid red;
+	background: #ffcece;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="dimension.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="scroll-to-top.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>jQuery Form Validation</h3></div>
+
+			<div class="buttons"></div><!-- End .buttons -->
+
+			<div class="display">
+				<h3>Contact Form</h3>
+				<form action="">
+					<table>
+						<tr>
+							<td><label for="name">Your Name<span>*</span></label></td>
+							<td><input type="text" id="name" class="required" placeholder="Write your name" /></td>
+							<td><span class="name"></span></td>
+						</tr>
+						<tr>
+							<td><label for="email">Your Email<span>*</span></label></td>
+							<td><input type="email" id="email" class="required" placeholder="Write your email" /></td>
+						</tr>
+						<tr>
+							<td><label for="subject">Your Subject</label></td>
+							<td><input type="text" id="subject" placeholder="Write your subject" /></td>
+						</tr>
+						<tr>
+							<td><label for="message">Your Message</label></td>
+							<td><textarea id="message" placeholder="Write your message"></textarea></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="submit" value="Submit" id="submit"></td>
+						</tr>
+					</table>
+				</form>
+				<div id="status"></div>
+			</div><!-- End .display -->
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				var required = jQuery('input.required');
+				var submit = jQuery('input#submit');
+				var name = jQuery('input#name');
+				var status = null;
+				submit.click(function(e){
+					var name_length = name.val().length;
+					status = true;
+					required.each(function(){
+						if((jQuery(this).val()) === ''){
+							status = false;
+							jQuery(this).addClass('error');
+						}else{
+							status = true;
+							jQuery(this).removeClass('error');
+						}
+					});
+
+					if(status === false){
+						jQuery('div#status').text('Status: Error!');
+						e.preventDefault();
+					}else{
+						if(name_length < 4){
+							jQuery('span.name').text('Name must be grater-than ' +name_length);
+						}
+						jQuery('div#status').text('Status: Successful!');
+						return false;
+					}
+				});
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shortcut-Tab</title>
+<style type="text/css">
+.checked{
+	color:green;
+}
+a{
+	margin-right: 10px;
+	display: inline-block;
+	color:#000;
+	font-size: 18px;
+}
+.size, .size1{
+	margin-top: 35px;
+}
+</style>	
+</head>
+<body>
+
+	<div class="size">
+		<a class="checked" href="#">Tab-1</a>
+		<a href="#">Tab-2</a>
+		<a href="#">Tab-3</a>
+		<a href="#">Tab-4</a>
+		<a href="#">Tab-5</a>
+	</div>
+	<div class="size1">
+		<a class="checked" href="#">Tab-1</a>
+		<a href="#">Tab-2</a>
+		<a href="#">Tab-3</a>
+		<a href="#">Tab-4</a>
+		<a href="#">Tab-5</a>
+	</div>
+	
+	<script type="text/javascript" src="../jQuery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			// method one
+			jQuery(".size a").click(function(){
+				jQuery('.size a.checked').removeClass('checked');
+				jQuery(this).toggleClass('checked');
+			});
+			// method two
+			jQuery(".size1 a").click(function() {
+			    jQuery(this).addClass('checked').siblings().removeClass('checked');
+			});
+		});
+	</script>
+</body>
+</html>

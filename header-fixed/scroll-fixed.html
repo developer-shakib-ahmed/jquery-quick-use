@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scroll Previous Fixed</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+		    var tempscroll = 0;
+		    jQuery(window).scroll(function(){
+		        if (jQuery(window).scrollTop() < tempscroll) {
+		            jQuery('div.main-nav nav.navbar').addClass('fixed');
+		        }else {
+		        	jQuery('div.main-nav nav.navbar').removeClass('fixed');
+		        }
+		        tempscroll = jQuery(window).scrollTop();
+		    });
+		});
+
+	</script>
+</body>
+</html>

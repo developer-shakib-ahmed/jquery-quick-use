@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="number" id="typetext">
+	<input type="submit" value="CLick" id="click">
+	<p id="show">Output:</p>
+
+	<script type="text/javascript">
+		var text  = document.getElementById("typetext");
+		var click = document.getElementById("click");
+		var show  = document.getElementById("show");
+		var bChr  = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+
+		click.addEventListener("click", function() {
+			var input  = text.value.split('');
+			var output = '';
+			// 1234
+			for (var i = 0; i < input.length; i++) {
+				var index = input[i];
+				output += bChr[index];
+			}
+			show.innerHTML='Output: ' + output;
+		});
+	</script>
+</body>
+</html>

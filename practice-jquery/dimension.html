@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Class</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+<style type="text/css">
+	div.dimantion{
+	    margin-left: 30px;	
+	}
+	div.box {
+	    border: 30px solid #34495E;
+	    padding: 30px;
+	    margin: 30px;
+	    font-size: 30px;
+	    line-height: 50px;
+	    text-align: center;
+	    background: #eee;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="remove-empty.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="form-validation.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>jQuery Dimension On Click Event</h3></div>
+
+			<div class="buttons">
+				<button id="hight">Line Height</button>
+				<button id="innerHeight">Height with padding</button>
+				<button id="outerHeight">Height with border</button>
+				<button id="width">Line Width</button>
+				<button id="innerWidth">Width with padding</button>
+				<button id="outerWidth">Width with border</button>
+				<button id="outerWidthTrue">Width with margin</button>
+			</div>
+
+			<div class="display">
+				<div class="dimantion"></div>
+				<div class="box">jQuery Dimension On Click Event</div>
+			</div>
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+
+				var dimantion = jQuery('.dimantion');
+				var box = jQuery('.box');
+				var unit = 'px';
+				var value = '';
+
+				jQuery('#hight').click(function(){
+					value += '<p> Line height is '+ box.height() + unit+'</p>';
+					dimantion.html(value);
+				});
+
+				jQuery('#innerHeight').click(function(){
+					value += '<p>Height with padding is '+ box.innerHeight() + unit+'</p>';
+					dimantion.html(value);
+				});
+
+				jQuery('#outerHeight').click(function(){
+					value += '<p>Height with border is ' + box.outerHeight() + unit+'</p>';
+					dimantion.html(value);
+				});
+
+				jQuery('#width').click(function(){
+					value += '<p>Line width is '+ box.width() + unit+'</p>';
+					dimantion.html(value);
+				});
+
+				jQuery('#innerWidth').click(function(){
+					value += '<p>Width with padding is '+ box.innerWidth() + unit+'</p>';
+					dimantion.html(value);
+				});
+
+				jQuery('#outerWidth').click(function(){
+					value += '<p>Width with border is '+ box.outerWidth() + unit+'</p>';
+					dimantion.html(value);
+				});
+
+				jQuery('#outerWidthTrue').click(function(){
+					value += '<p>Width with margin is '+ box.outerWidth(true) + unit+'</p>';
+					dimantion.html(value);
+				});
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

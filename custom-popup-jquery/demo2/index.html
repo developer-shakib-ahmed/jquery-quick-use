@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Pop Up</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		html {
+		  min-height: 100%;
+		}
+		body {
+		  min-height: 100%;
+		  background: #fff;
+		  font: 14px/125% Tahoma;
+		  text-align: center;
+		}
+
+		.video_popup_overlay {
+		  display: none;
+		  position: fixed;
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  height: 100%;
+		  background: rgba(53, 36, 22, 0.95);
+		  text-align: center;
+		  z-index: 100;
+		}
+
+		.video_popup_overlay:after {
+		  display: inline-block;
+		  height: 100%;
+		  width: 0;
+		  vertical-align: middle;
+		  content: "";
+		}
+
+		.popup {
+		  display: inline-block;
+		  position: relative;
+		  width: 100%;
+		  height: 100%;
+		  max-width: 640px;
+		  max-height: 480px;
+		  padding: 20px;
+		  border: 1px solid black;
+		  background: black;
+		  color: white;
+		  vertical-align: middle;
+		}
+
+		.popup-form__row {
+		  margin: 1em 0;
+		}
+
+		.popup__close {
+		  display: block;
+		  position: absolute;
+		  top: 1px;
+		  right: 1px;
+		  width: 12px;
+		  height: 12px;
+		  padding: 8px;
+		  cursor: pointer;
+		  text-align: center;
+		  font-size: 12px;
+		  line-height: 12px;
+		  color: rgba(53, 36, 22, 0.95);
+		  text-decoration: none;
+		  font-weight: bold;
+		}
+
+		.popup__close:hover {
+		  color: #eea200;
+		}
+
+		iframe {
+		  width: 100%;
+		  height: 100%;
+		}
+		
+		#video_popup_toggle{
+			width: 100%;
+			max-width: 690px;
+			margin: 20px auto;
+			overflow: hidden;
+			cursor: pointer;
+			position: relative;
+			box-shadow: 0 10px 50px rgba(0,0,0,0.08), 0 13px 45px rgba(0,0,0,0.08);
+			border-radius: 10px;
+		}
+		#video_popup_toggle:after{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: rgba(158, 61, 120, 0.8) !important;
+			background-image: url(play.png);
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-position: center;
+			z-index: 1;
+		}
+		#video_popup_toggle img{
+			display: block;
+			max-width: 100%;
+			transition: all .7s cubic-bezier(.2,1,.22,1);
+			transform: scale(1.05);
+		}
+		#video_popup_toggle:hover img{
+			transform: scale(1.14);
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="video_popup_toggle" >
+		<img src="bg.jpg" alt="bg">
+	</div>
+
+	<div class="video_popup_overlay">
+	  <div class="popup" id="popupVid">
+	    <a href="#" class="popup__close">X</a>
+	    <iframe src="https://player.vimeo.com/video/302033613" frameborder="0" allowfullscreen  allow="autoplay"></iframe>
+	  </div>
+	</div>
+
+
+	<!-- Script -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var videoPopOverlay = jQuery(".video_popup_overlay");
+		var popVid = jQuery('#popupVid iframe');
+		var popVidurl = popVid[0].src;
+		
+
+		jQuery("#video_popup_toggle").click(function() {
+		  videoPopOverlay.css("display", "block");
+		  popVid[0].src += "?autoplay=1";
+		});
+
+		videoPopOverlay.click(function(event) {
+		  e = event || window.event;
+		  if (e.target == this) {
+		    jQuery(videoPopOverlay).css("display", "none");
+		  }
+		  popVid[0].src = popVidurl;
+		});
+
+		jQuery(".popup__close").click(function() {
+		  videoPopOverlay.css("display", "none");
+		  popVid[0].src = popVidurl;
+		});
+	</script>
+</body>
+</html>

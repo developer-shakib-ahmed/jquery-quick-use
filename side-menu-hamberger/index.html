@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>Side Menu Hamberger</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		div.container{
+			max-width: 1170px;
+			width: 100%;
+			margin: 0px auto;
+			padding: 0px 15px;
+		}
+		header {
+		    background: #f1f1f1;
+		    padding: 10px 0px;
+		    position: relative;
+		}
+		div#hamBurger {
+		    width: 42px;
+		    padding: 14px 12px;
+		    cursor: pointer;
+		    /* background: #ddd; */
+		    position: relative;
+		    left: -12px;
+		}
+		div#hamBurgerIcon {
+		    position: relative;
+		    width: 100%;
+		    display: block;
+		    height: 13px;
+		}
+		div#hamBurgerIcon div.bar {
+		    width: 100%;
+		    height: 1px;
+		    background-color: #000;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: 9;
+		    transition: all 0.3s linear;
+		}
+		div#hamBurgerIcon div.bar:nth-child(2) {
+		    top: 6px;
+		}
+		div#hamBurgerIcon div.bar:last-child {
+		    top: 12px;
+		}
+		div#hamBurgerIcon.close div.bar:first-child {
+		    transform: translateY(6px) rotate(45deg);
+		}
+		div#hamBurgerIcon.close div.bar:nth-child(2) {
+		    opacity: 0;
+		}
+		div#hamBurgerIcon.close div.bar:last-child {
+		    transform: translateY(-6px) rotate(-46deg);
+		}
+
+
+		div#menu-wrap {
+		    position: fixed;
+		    top: 61px;
+		    left: 0;
+		    width: 100%;
+		    background: rgba(0,0,0,0.55);
+		    height: 100%;
+		    z-index: 999;
+		    transition: 0s;
+		    opacity: 0;
+		    visibility: hidden;
+		    padding-bottom: 61px;
+		}
+		div#menu-wrap.show{
+			opacity: 1;
+			visibility: visible;
+			transition: 0.3s ease-in-out 0.1s;
+		}
+		div#menu-wrap ul {
+		    margin: 0;
+		    padding: 0;
+		    position: relative;
+		    top: 0;
+		    left: -100%;
+		    background-color: #fff !important;
+		    max-height: none;
+		    height: 100%;
+		    width: 82%;
+		    transition: 0s;
+		    min-width: 280px;
+		    overflow-x: hidden;
+		    overflow-y: auto;
+		}
+		div#menu-wrap.show ul {
+		    left: 0;
+		    transition: 0.4s ease-in-out;
+		}
+		div#menu-wrap ul li{
+			list-style: none;
+			padding: 0px 15px;
+		}
+		div#menu-wrap ul li a {
+		    display: block;
+		    text-decoration: none;
+		    padding: 12px 0px;
+		    color: #131417;
+		    border-bottom: 1px solid #d2d2d2;
+		}
+		div#menu-wrap ul li:last-child a{
+			border-bottom: 0px solid #d2d2d2;
+		}
+
+
+		div#menu-wrap ul ul.sub {
+		    width: 100%;
+		    max-height: 0;
+		    transition: all 0.3s linear;
+		}
+		div#menu-wrap ul li.open ul.sub {
+		    max-height: 800px;
+		}
+		div#menu-wrap ul ul.sub li {
+		    padding: 0;
+		}
+		div#menu-wrap ul ul.sub li a{
+			margin-left: 10px;
+		}
+		div#menu-wrap ul ul.sub li:last-child a {
+		    border-bottom: 1px solid #d2d2d2;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="hamBurger">
+				<div id="hamBurgerIcon">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+			</div>
+
+			<div id="menu-wrap">
+				<ul class="menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Services</a>
+						<ul class="sub">
+							<li><a href="#">Service Item</a></li>
+							<li><a href="#">Service Item</a></li>
+							<li><a href="#">Service Item</a></li>
+							<li><a href="#">Service Item</a></li>
+							<li><a href="#">Service Item</a></li>
+						</ul>	
+					</li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">FAQ</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function( $ ){
+		  jQuery(document).click(function(event) {
+		    var hamBurgerIcon = jQuery('div#hamBurgerIcon');
+		    var eL = event.target;
+		    var menu = jQuery('div#menu-wrap');
+		    if( eL.id == 'hamBurger' || eL.id == 'hamBurgerIcon' || eL.className == 'bar' ){
+		      event.preventDefault();
+		      hamBurgerIcon.toggleClass('close');
+		      menu.toggleClass('show');
+		    }else if( menu.is(eL) || menu.has(eL).length > 0 ){
+		      if( eL.id == 'menu-wrap' ){
+		        hamBurgerIcon.removeClass('close');
+		        menu.removeClass('show');
+		      }else{
+		        return true;
+		      }
+		    }else{
+		      hamBurgerIcon.removeClass('close');
+		      menu.removeClass('show');
+		    }    
+		  });
+
+			jQuery('div#menu-wrap ul li a').click(function(event) {
+				if( jQuery(this).attr('href') == '#' || jQuery(this).attr('href') == '' ){
+					event.preventDefault();
+					jQuery(this).parent().first().toggleClass('open');
+					jQuery(this).parent().siblings().removeClass('open');
+					jQuery(this).parent().find('.open').removeClass('open');
+				}else{
+					return true;
+				}
+			});
+		});
+	</script>
+</body>
+</html>

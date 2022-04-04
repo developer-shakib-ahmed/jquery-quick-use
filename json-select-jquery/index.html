@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Division</title>
+	<link rel="stylesheet" href="chosen/chosen.min.css">
+	<style type="text/css">
+		body{
+			font-family: tahoma;
+			font-size: 16px;
+			line-height: 24px;
+			color: #222;
+		}
+		table {
+		    margin: 15px auto 0;
+		    width: 100%;
+		    max-width: 550px;
+		}
+		select{
+			width: 150px;
+			cursor: pointer;
+		}
+		ul.lists {
+		    margin: 35px auto 0;
+		    width: 550px;
+		}
+		ul.lists li{
+			margin-bottom: 15px;
+		}
+	</style>
+</head>
+<body>
+
+	<form action="" method="post">
+		<table>
+			<tr>
+				<td><b>Filter:</b></td>
+				<td>
+					<select name="division" id="division" class="chosen-select-1">
+						<option value="0">--Division--</option>
+					</select>
+				</td>
+				<td>
+					<select name="district" id="district" class="chosen-select-2">
+						<option value="0">--District--</option>
+					</select>
+				</td>
+				<td>
+					<select name="subDistrict" id="subDistrict" class="chosen-select-3">
+						<option value="0">--Sub-District--</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<ul class="lists">
+		<li class="dhaka">Lorem ipsum dolor sit amet.</li>
+		<li class="dhaka dhaka adabar">Cconsectetur adipisicing elit.</li>
+		<li class="dhaka dhaka agargaon">Quod distinctio impedit sint accusantium ducimus consequuntur in.</li>
+		<li class="chittagong">Nobis dolores saepe</li>
+		<li class="chittagong chandpur">Tempore voluptas repellat.</li>
+		<li class="chittagong chandpur chandpur-sadar">Laborum laboriosam laudantium.</li>
+		<li>Vel excepturi possimus fuga inventore!</li>
+		<li>Lorem ipsum dolor sit amet.</li>
+		<li>Cconsectetur adipisicing elit.</li>
+		<li>Quod distinctio impedit sint accusantium ducimus consequuntur in.</li>
+		<li>Nobis dolores saepe</li>
+		<li>Tempore voluptas repellat.</li>
+		<li>Laborum laboriosam laudantium.</li>
+		<li>Vel excepturi possimus fuga inventore!</li>
+	</ul>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="chosen/chosen.jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			// BB Division Data 
+			var bbData = {
+				Dhaka: [
+				{Dhaka: ["Adabar", "Agargaon", "Airport Thana", "Azimpur", "Badda", "Bakshibazar", "Banani", "BananiDOHS", "Banasree", "Banglabazar", "Banglamotor", "Bangshal", "Baridhara", "BaridharaDOHS", "Basabo", "Basundhara", "BUETcampus", "Cantonment", "Choukbazar", "DakhinKhan", "Dayaganj", "Demra", "Dhamrai", "Dhanmondi", "Dohar", "DUcampus", "ElephantRoad", "Eskaton", "Farmgate", "Gabtali", "Gandaria", "Green Road", "Gulistan", "Gulshan-1", "Gulshan-2", "Hatirpul", "Hazaribagh", "Hemayetpur", "Ibrahimpur", "Jatrabari", "Jigatala", "Jurain", "Kadamtoli", "Kafrul", "Kakrail", "Kalabagan", "Kalyanpur", "Kamalapur", "Kamrangirchar", "KathalBagan", "Kawranbazar", "Kazipara", "Keraniganj", "Khilgaon", "Khilkhet", "Kotwali", "Lalbag", "Lalmatia", "Maghbazar", "Malibag", "Middle Badda", "Mirpur", "Mirpur-1", "Mirpur-10", "Mirpur-11", "Mirpur-12", "Mirpur-2", "MirpurDOHS", "Moddho Vatara", "Mohakhali", "MohakhaliDOHS", "Mohammadpur", "Motijheel", "Mughda", "Nakhalpara", "Narinda", "Nawabganj", "NayaPaltan", "NewEskaton", "NewMarket", "Niketon", "Nikunjo", "Nilkhet", "Pallabi", "Panthapath", "Polashi", "Postagola", "PuranaPaltan", "Purbachal", "Rajabazar", "Rajarbag", "Ramna", "Rampura", "Rayerbazar", "Rupnagar", "Sabujbag", "Sadarghat", "Savar", "Segunbagicha", "Shahbag", "Shahjadpur", "Shajahanpur", "Shampur", "Shantinagar", "Sher-e-BanglaNagar", "Shimrail", "Shukrabad", "Shyamoli", "Siddeswary", "Sutrapur", "Tejgaon", "Tejkunipara", "Tikatuli", "Turag", "Uttara", "UttarKhan", "Wari"]},
+				{Faridpur: ["Faridpur Sadar", "Alfadanga", "Bhanga", "Boalmari", "Charbhadrasan", "Kotoali", "Madhukhali", "Nagarkanda", "Sadarpur", "Saltha"]},
+				{Gazipur: ["Gazipur Sadar", "Kaliakair", "Kaliganj", "Kapasia", "Sreepur", "Tongi"]},
+				{Gopalganj: ["Gopalganj Sadar", "Kashiani", "Kotalipara", "Moksedpur", "Tungipara"]},
+				{Kishoreganj: ["Kishoreganj Sadar", "Astagram", "Bajitpur", "Bhairab", "Hossainpur", "Itna", "Karimganj", "Katiadi", "Kuliarchar", "Mithamain", "Nikli", "Pakundia", "Tarail"]},
+				{Madaripur: ["Madaripur Sadar", "Kalkini", "Rajoir", "Shibchar"]},
+				{Manikganj: ["Manikganj Sadar", "Daulatpur", "Ghior", "Harirampur", "Saturia", "Shivalaya", "Singair"]},
+				{Munshiganj: ["Munshiganj Sadar", "Gazaria", "Lohaganj", "Sirajdikhan", "Sreenagar", "Tongibari"]},
+				{Narayanganj: ["Narayanganj Sadar", "Araihazar", "Bandar", "Fatullah", "Rupganj", "Siddhirganj", "Sonargaon"]},
+				{Narsingdi: ["Belabo", "Monohardi", "Narsingdi Sadar", "Palash", "Raipura", "Shibpur", "Shibpur"]},
+				{Rajbari: ["Rajbari Sadar", "Goalandaghat", "Pangsha", "Baliakandi"]},
+				{Shariatpur: ["Shariatpur Sadar", "Bhedarganj", "Damudya", "Gosairhat", "Jajira", "Naria", "palong", "sokhipur"]},
+				{Tangail: ["Tangail Sadar", "Basail", "Bhuapur", "Delduar", "Dhonbari", "Ghatail", "Gopalpur", "Kalihati", "Madhupur", "Mirzapur", "Nagarpur", "Sakhipur"]}
+				], // Dhaka
+
+				Chittagong: [
+					{Bandarban: ["Bandarban Sadar", "Naikhanchari", "Ali Kadam", "Lama", "Rowangchhari", "Ruma", "Thanchi"]},
+					{Brahmanbaria: ["Brahmanbaria Sadar", "Akhaura", "Ashuganj", "Bancharampur", "Bijoynagar (New)", "Kasba", "Nabinagar", "Nasirnagar", "Sarail"]},
+					{Chandpur: ["Chandpur Sadar", "Baburhaat", "Faridganj", "Haimchar", "Haziganj", "Kachua", "Matlab", "Motlob Uttor", "Shahrasti"]},
+					{Chittagong: ["Agrabad", "Akbarshah", "Anwara", "Bakulia", "Bandar", "Banshkhali", "Bayejid", "Boalkhali", "bohoddarhat", "Chandanaish","Chandgaon R/A", "Chawk Bazar", "Coxs Bazar", "Double Mooring", "Fatikchhari", "Hali Sahar", "Hathazari", "Karnafuli", "Kazirdewri", "Khatungonj", "Khulshi", "Kotoali", "Lal Khan Bazar", "Lohagara", "Love Lane", "Mirsharai", "Muradpur", "Nasirabad", "New Muring", "Pahartali","Panchlaish", "PatharGhata", "Patiya", "Potenga", "Rangunia", "Raozan", "Sandwip", "Satkania", "Sitakunda", "Bhujpur"]},
+					{Comilla: ["Comilla Sadar", "Barura", "Brahmanpara", "Burichong", "Chandina", "Chauddagram", "Daudkandi", "Debidwar", "Homna", "Laksam", "Meghna", "Moinamoti", "Monohargonj", "Muradnagar", "Nangalkot", "Sadar South ", "Titas"]},
+					{CoxsBazar: ["Cox's Bazar Sadar", "Chakaria", "Kutubdia", "Maheshkhali", "Pekua", "Ramu", "Teknaf", "Ukhia", "Ukhia"]},
+					{Feni: ["Feni Sadar", "Chhagalnaiya", "Daganbhuiyan", "Fulgazi", "Parshuram", "Sonagazi"]},
+					{Khagrachhari: ["Dighinala", "Khagrachhari", "Lakshmichhari", "Mahalchhari", "Manikchhari", "Matiranga", "Panchhari", "Ramgarh"]},
+					{Lakshmipur: ["Lakshmipur Sadar", "Kamal Nagar", "Raipur", "Ramganj", "Ramgati"]},
+					{Noakhali: ["Noakhali Sadar", "Begumganj", "Chatkhil", "Choumohoni", "Companiganj", "Hatiya", "Kabirhat", "Senbagh", "Sonaimuri", "Subarnachar"]},
+					{Rangamati: ["Rangamati Sadar", "Baghaichari", "Barkal", "Belaichari", "Juraichari", "Kaptai", "Kawkhali (Betbunia)", "Langadu", "Nanierchar", "Rajasthali"]}
+				], // Chittagong
+
+				Khulna: [
+					{Bagerhat: ["Bagerhat Sadar", "Chitalmari", "Fakirhat", "Kachua", "Mollahat", "Mongla", "Morrelganj", "Rampal", "Sarankhola"]},
+					{Chuadanga: ["Chuadanga Sadar", "Alamdanga", "Damurhuda", "Jibannagar"]},
+					{Jessore: ["Jessore Sadar", "Avoynagar", "Bagherpara", "Benapol", "Chaugachha", "Jhikargachha", "Keshabpur", "Manirampur", "Sharsha"]},
+					{Jhenaidah: ["Jhenaidah Sadar", "Harinakunda", "Kaliganj", "Kotchandpur", "Maheshpur", "Shailkupa"]},
+					{Khulna: ["Batiaghata", "Dacope", "Dighalia", "Doulotpur", "Dumuria", "Khalishpur", "Khan Jahan Ali", "Khulna", "Koyra", "Paikgachha", "Phultala", "Rupsha", "Sonadanga", "Terokhada"]},
+					{Kushtia: ["Kushtia Sadar", "Bheramara", "Daulatpur", "Islami University Thana", "Khoksa", "Kumarkhali", "Mirpur"]},
+					{Magura: ["Magura Sadar", "Mohammadpur", "Shalikha", "Sreepur"]},
+					{Meherpur: ["Meherpur Sadar", "Gangni", "Mujibnagar"]},
+					{Narail: [ "Narail Sadar", "Kalia", "Lohagara"]},
+					{Satkhira: ["Satkhira Sadar", "Assasuni", "Debhata", "Kalaroa", "Kaliganj", "Patkelghata", "Shyamnagar", "Tala"]}
+				], // Khulna
+
+				Sylhet: [
+					{Habiganj: ["Habiganj Sadar", "Ajmiriganj", "Bahubal", "Baniyachong", "Chunarughat", "Lakhai", "Madhabpur", "Nabiganj", "Shayestagonj"]},
+					{Moulvibazar: ["Moulvibazar Sadar", "Barlekha", "Juri", "Komolgonj", "komolgonj", "Kulaura", "Rajnagar", "Sreemangal"]},
+					{Sunamganj: ["Sunamganj Sadar", "Bishwamvarpur", "Chhatak", "Derai", "Dharampasha", "Dharampasha", "Dowarabazar", "Jagannathpur", "Jamalganj", "Sullah", "Tahirpur"]},
+					{Sylhet: ["Sylhet Sadar", "Airport", "Balaganj", "Beanibazar", "Bishwanath", "Companiganj", "Dokkhin Surma", "Fenchuganj", "Golapganj", "Gowainghat", "Jaintiapur", "Kanaighat", "Osmaninagar", "Zakiganj"]}
+				], // Sylhet
+
+				Rajshahi: [
+					{Bogra: ["Bogra Sadar", "Adamdighi", "Dhunat", "Dupchanchia", "Gabtali", "Kahaloo", "Nandigram", "Sahajanpur", "Sariakandi", "Sherpur", "Shibganj", "Sonatala"]},
+					{Chapainawabganj: ["Chapainawabganj Sadar", "Bholahat", "Gomastapur", "Nachole", "Shibganj"]},
+					{Joypurhat: ["Joypurhat Sadar", "Akkelpur", "Kalai", "Khetlal", "Panchbibi"]},
+					{Naogaon: ["Naogaon Sadar", "Atrai", "Badalgachhi", "Dhamoirhat", "Mahadevpur", "Manda", "Niamatpur", "Patnitala", "Patnitala", "Porsha", "Raninagar", "Sapahar"]},
+					{Natore: ["Natore Sadar", "Bagatipara", "Baraigram", "Gurudaspur", "Lalpur", "Noldanga", "Singra"]},
+					{Pabna: ["Pabna Sadar", "Ataikul", "Atgharia", "Bera", "Bhangura", "Chatmohar", "Faridpur", "Ishwardi", "Santhia", "Sujanagar"]},
+					{Rajshahi: ["Rajshahi Sadar", "Bagha", "Bagmara", "Boalia", "Charghat", "Cherag Ghat", "Durgapur", "Godagari", "Mohanpur", "Motihar", "Poba", "Puthia", "Shahmokhdum", "Tanore"]},
+					{Sirajganj: ["Sirajganj Sadar", "Belkuchi", "Chauhali", "Kamarkhanda", "Kazipur", "Raiganj", "Ranigonj", "Shahjadpur", "Solonga", "Tarash", "Ullahpara"]}
+				], // Rajshahi
+
+				Mymensingh: [
+					{Jamalpur: ["Jamalpur Sadar", "Baksiganj", "Dewanganj", "Islampur", "Madarganj", "Melandaha", "Sarishabari"]},
+					{Mymensingh: ["Mymensingh Sadar", "Bhaluka", "Dhobaura", "Fulbaria", "Gaffargaon", "Gauripur", "Haluaghat", "Ishwarganj", "Muktagachha", "Nandail", "Phulpur", "Trishal"]},
+					{Netrakona:["Netrokona Sadar", "Atpara", "Barhatta", "Durgapur", "Kalmakanda", "Kendua", "Khaliajuri", "Madan", "Mohanganj", "Purbadhala"]},
+					{Sherpur: ["Sherpur Sadar", "Jhenaigati", "Nakla", "Nalitabari", "Sreebardi"]}
+				], // Mymensingh
+
+				Barisal: [
+					{Barguna: ["Barguna Sadar", "Amtali", "Bamna", "Betagi", "Patharghata"]},
+					{Barisal: ["Barisal Sadar", "Agailjhara", "Airport Model Thana", "Babuganj", "Bakerganj", "Banaripara", "Gaurnadi", "Hizla", "Mehendiganj", "Muladi", "Wazirpur"]},
+					{Bhola: ["Bhola Sadar", "Burhanuddin", "Char Fasson", "Daulatkhan", "Lalmohan", "Manpura", "Tozumoddin"]},
+					{Jhalokati: ["Jhalokati Sadar", "Kathalia", "Nalchity", "Rajapur"]},
+					{Patuakhali: ["Patuakhali Sadar", "Bauphal", "Doshmina", "Dumki", "Galachipa", "Kolapara", "Mirzaganj", "Rangabali"]},
+					{Pirojpur: ["Pirojpur Sadar", "Bhandaria", "Kawkhali", "Mathbaria", "Nazirpur", "Nesarabad (Swarupkati)", "Rangabali", "Zianagor"]}
+				], // Barisal
+
+				Rangpur: [
+					{Dinajpur: ["Dinajpur Sadar", "Biral", "Birampur", "Birganj", "Bochaganj", "Chirirbandar", "Fulbari ", "Ghoraghat", "Hakimpur", "Kaharole", "Khansama", "Manmathapur", "Nawabganj", "Parbatipur", "Setabgonj"]},
+					{Gaibandha: ["Gaibandha Sadar", "Gobindaganj", "Palashbari", "Phulchhari", "Sadullapur", "Shaghata", "Sundarganj"]},
+					{Kurigram: ["Kurigram Sadar", "Adit", "Bhurungamari", "Chilmari", "Chilmari", "Chilmari", "Nageshwari", "Phulbari", "Rajarhat", "Rajibpur", "Raomari", "Ulipur"]},
+					{Lalmonirhat: ["Lalmonirhat Sadar", "Aditmari", "Hatibandha", "Kaliganj", "Patgram"]},
+					{Nilphamari: ["Nilphamari Sadar", "Dimla", "Domar", "Jaldhaka", "Kishoreganj", "Saidpur"]},
+					{Panchagarh: ["Panchagarh Sadar", "Atwari", "Boda", "Debiganj", "Tetulia"]},
+					{Rangpur: ["Rangpur Sadar", "Badarganj", "Gangachhara", "Kaunia", "Mithapukur", "Mithapukur", "Pirgachha", "Pirganj", "Taraganj"]},
+					{Thakurgaon: ["Thakurgaon Sadar", "Baliadangi", "Haripur", "Pirganj", "Ranisankail", "Ranisankail"]}
+				] // Rangpur 
+			};
+
+
+			
+			jQuery('select').chosen();
+
+			var division = jQuery('select#division');
+			var district = jQuery('select#district');
+			var subDistrict = jQuery('select#subDistrict');
+
+			var list = jQuery('ul.lists li');
+
+			for(var i in bbData){
+				division.append('<option value="'+ i +'">'+ i +'</option>').trigger('chosen:updated');
+			}
+
+			division.change(function(){
+				district.empty();
+				district.append('<option value="0">--District--</option>');
+				subDistrict.empty();
+				subDistrict.append('<option value="0">--Sub-District--</option>').trigger('chosen:updated');
+				var divisionVal = jQuery(this).val();
+				if(divisionVal != "0"){
+					var count = 0;
+					for(var j in bbData[divisionVal]){
+						var districtVal = bbData[divisionVal][j];
+						for(var k in districtVal){
+							count++;
+							kk = (k == "CoxsBazar") ? "Cox's Bazar" : k ;
+							district.append('<option value="'+ k.toLowerCase() + '-' + count +'">'+ kk +'</option>').trigger('chosen:updated');
+						}
+					}
+					list.each(function() {
+						if(jQuery(this).hasClass(divisionVal.toLowerCase())){
+							jQuery(this).show();
+						}else{
+							jQuery(this).hide();
+						}
+					});
+				}else{
+					district.empty();
+					district.append('<option value="0">--District--</option>').trigger('chosen:updated');					
+					list.each(function() {
+						jQuery(this).show();
+					});
+				}
+			});
+
+			district.change(function(){
+				subDistrict.empty();
+				subDistrict.append('<option value="0">--Sub-District--</option>');
+				var divisionVal = division.val();
+				var districtVal = jQuery(this).val();
+				districtVal = parseInt(districtVal.replace(/([a-z])\w+-/g, '') - 1);
+				if(districtVal != -1){
+					for(var l in bbData[divisionVal][districtVal]){
+						for (var i = 0; i < bbData[divisionVal][districtVal][l].length; i++) {
+							var subDistrictVal = bbData[divisionVal][districtVal][l][i];
+							subDistrict.append('<option value="'+ subDistrictVal.toLowerCase().replace(" ", "-") +'">'+ subDistrictVal +'</option>').trigger('chosen:updated');
+						}
+					}
+					var districtVal2 = jQuery(this).val().replace(/-[0-9]/g, '');
+					list.each(function() {
+						if(jQuery(this).hasClass(districtVal2)){
+							jQuery(this).show();
+						}else{
+							jQuery(this).hide();
+						}
+					});
+				}else{
+					subDistrict.empty();
+					subDistrict.append('<option value="0">--Sub-District--</option>').trigger('chosen:updated');
+					list.each(function() {
+						if(jQuery(this).hasClass(divisionVal.toLowerCase())){
+							jQuery(this).show();
+						}else{
+							jQuery(this).hide();
+						}
+					});
+				}
+			});
+
+			subDistrict.change(function(){
+				var subDistrictVal2 = jQuery(this).val().replace(/-[0-9]/g, '');
+				var districtVal2 = district.val().replace(/-[0-9]/g, '');
+				if(subDistrictVal2 != "0"){
+					list.each(function() {
+						if(jQuery(this).hasClass(subDistrictVal2)){
+							jQuery(this).show();
+						}else{
+							jQuery(this).hide();
+						}
+					});
+				}else{
+					list.each(function() {
+						if(jQuery(this).hasClass(districtVal2)){
+							jQuery(this).show();
+						}else{
+							jQuery(this).hide();
+						}
+					});
+				}					
+			});
+		});
+
+		var test = {
+			name: "Shakib"
+		};
+	</script>
+</body>
+</html>

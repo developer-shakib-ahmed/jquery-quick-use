@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery With Select Tag</title>
+<style type="text/css">
+.show{
+	display: inline-block !important;
+}
+.hide{
+	display: none !important;
+}
+div.action_tag h1{
+	color:blue;
+}
+div.action_tag h1.active{
+	color:red;
+}
+</style>	
+</head>
+<body>
+
+	<div class="select_one">
+		<select name="country" id="country">
+			<option value="default">-- Select Country --</option>
+			<option value="bn">Bangladesh</option>
+			<option value="in">India</option>
+		</select>
+
+		<select name="bn_state" id="bn_state" style="display:none;">
+			<option value="">Dhaka</option>
+			<option value="">Khulna</option>
+			<option value="">Rajshahi</option>
+			<option value="">Barishal</option>
+		</select>
+
+		<select name="in_state" id="in_state" style="display:none;">
+			<option value="">Dhilli</option>
+			<option value="">Kalkata</option>
+			<option value="">Rajsthan</option>
+			<option value="">Channai</option>
+		</select>
+	</div>
+
+	<div id="countryOut"></div>
+
+	<div class="select_two">
+		<br>
+		<br>
+		<br>
+		<select name="select_tag" id="select_tag">
+			<option value="one">Option One</option>
+			<option value="two">Option Two</option>
+			<option value="three">Option Three</option>
+		</select>
+		<br>
+		<div class="action_tag">
+			<h1>Demo option one</h1>
+			<h1>Demo option two</h1>
+			<h1>Demo option three</h1>
+		</div>
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var url = window.location.href;
+
+			// $('#countryOut').html(url);
+
+			$('select#country').change(function(){
+				var selectedValue = $(this).val();
+				var selectedText = $('select#country option:selected').text();
+				if(selectedValue == 'bn'){
+					$('select#bn_state').addClass('show');
+					$('select#in_state').removeClass('show');
+					// window.location = '/';
+					// return false;
+				}else if(selectedValue == 'in'){
+					$('select#in_state').addClass('show');
+					$('select#bn_state').removeClass('show');
+					// window.location = '/';
+					// return false;
+				}
+			});
+		});
+
+
+
+		jQuery(document).ready(function(){
+			var select_tag = jQuery('select#select_tag');
+			var action_tag = jQuery('div.action_tag h1');
+
+			jQuery('div.action_tag h1:first-child').addClass('active');
+
+			select_tag.change(function(){
+				action_tag.removeClass('active');
+				jQuery(action_tag[jQuery(this)[0].selectedIndex]).addClass('active');
+			});
+		});
+	</script>
+</body>
+</html>

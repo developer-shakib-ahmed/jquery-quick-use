@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>District & Sub-District</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background-image: url(img/Bangladesh-Flag.jpg);
+			background-size: cover;
+			background-position: bottom center;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+		}
+		div.overlay {
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    background-color: rgba(0, 0, 0, 0.6);
+		}
+		div.wrap{
+
+		}
+		div.wrap {
+		    max-width: 600px;
+		    width: 100%;
+		    text-align: center;
+		    position: absolute;
+		    top: 30%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		}
+		div.bottom{
+
+		}
+		h1 {
+			color: green;
+			font-size: 80px;
+		}
+		span.red{
+			color: #e74c3c;
+		}
+		span.arrowL, span.arrowR {
+		    color: #e74c3c;
+		    font-size: 30px;
+		    line-height: 1;
+		    position: relative;
+		    display: inline-block;
+		    margin: 35px 35px 35px 0px;
+		}
+		span.arrowL:after, span.arrowR:after {
+		    content: '←';
+		    position: absolute;
+		    top: 30px;
+		    left: 20px;
+		    transform: rotate(-50deg);
+		    color: green;
+		}
+		span.arrowR{
+			margin-right: 0;
+		}
+		span.arrowR:after {
+		    transform: rotate(-130deg);
+		    left: 60px;
+		}
+		form {
+		    white-space: nowrap;
+		}
+		select {
+		    background-color: transparent;
+		    color: #fff;
+		    padding: 10px 8px;
+		    min-width: 190px;
+		    margin: 0px 5px;
+		    display: inline-block;
+		    cursor: pointer;
+		    transition: 0.3s;
+		    outline: 0;
+		}
+		select:hover {
+		    border: 1px solid green;
+		}
+		select option {
+		    color: #000;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="overlay">
+
+		<div class="wrap">
+			<div class="top">
+				<h1>Bang<span class="red">la</span>desh</h1>
+				<span class="arrowL">District</span>
+				<span class="arrowR">Sub-District</span>
+			</div>
+			<div class="bottom">
+				<form class="checkout">
+
+					<select name="district" id="billing_state">
+						<option value="">-- Select District --</option>
+						<option value="BAG">Bagerhat</option>
+						<option value="BAN">Bandarban</option>
+						<option value="BAR">Barguna</option>
+						<option value="BARI">Barisal</option>
+						<option value="BHO">Bhola</option>
+						<option value="BOG">Bogra</option>
+						<option value="BRA">Brahmanbaria</option>
+						<option value="CHA">Chandpur</option>
+						<option value="CHI">Chittagong</option>
+						<option value="CHU">Chuadanga</option>
+						<option value="COM">Comilla</option>
+						<option value="COX">Cox's Bazar</option>
+						<option value="DHA">Dhaka</option>
+						<option value="DIN">Dinajpur</option>
+						<option value="FAR">Faridpur </option>
+						<option value="FEN">Feni</option>
+						<option value="GAI">Gaibandha</option>
+						<option value="GAZI">Gazipur</option>
+						<option value="GOP">Gopalganj</option>
+						<option value="HAB">Habiganj</option>
+						<option value="JAM">Jamalpur</option>
+						<option value="JES">Jessore</option>
+						<option value="JHA">Jhalokati</option>
+						<option value="JHE">Jhenaidah</option>
+						<option value="JOY">Joypurhat</option>
+						<option value="KHA">Khagrachhari</option>
+						<option value="KHU">Khulna</option>
+						<option value="KIS">Kishoreganj</option>
+						<option value="KUR">Kurigram</option>
+						<option value="KUS">Kushtia</option>
+						<option value="LAK">Lakshmipur</option>
+						<option value="LAL">Lalmonirhat</option>
+						<option value="MAD">Madaripur</option>
+						<option value="MAG">Magura</option>
+						<option value="MAN">Manikganj </option>
+						<option value="MEH">Meherpur</option>
+						<option value="MOU">Moulvibazar</option>
+						<option value="MUN">Munshiganj</option>
+						<option value="MYM">Mymensingh</option>
+						<option value="NAO">Naogaon</option>
+						<option value="NAR">Narail</option>
+						<option value="NARG">Narayanganj</option>
+						<option value="NARD">Narsingdi</option>
+						<option value="NAT">Natore</option>
+						<option value="NAW">Nawabganj</option>
+						<option value="NET">Netrakona</option>
+						<option value="NIL">Nilphamari</option>
+						<option value="NOA">Noakhali</option>
+						<option value="PAB">Pabna</option>
+						<option value="PAN">Panchagarh</option>
+						<option value="PAT">Patuakhali</option>
+						<option value="PIR">Pirojpur</option>
+						<option value="RAJB">Rajbari</option>
+						<option value="RAJ">Rajshahi</option>
+						<option value="RAN">Rangamati</option>
+						<option value="RANP">Rangpur</option>
+						<option value="SAT">Satkhira</option>
+						<option value="SHA">Shariatpur</option>
+						<option value="SHE">Sherpur</option>
+						<option value="SIR">Sirajganj</option>
+						<option value="SUN">Sunamganj</option>
+						<option value="SYL">Sylhet</option>
+						<option value="TAN">Tangail</option>
+						<option value="THA">Thakurgaon</option>
+					</select>
+
+					<select name="subDistrict" id="billing_subdistrict">
+						<option value="none">-- Select Sub-District --</option>
+					</select>
+
+				</form>
+			</div>
+		</div>
+
+	</div>
+	
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+
+		  var billingState, StateVal, billingSubdistrict, i, subDistVal, subDistOut, subDist;
+
+		  billingState = jQuery('form.checkout select#billing_state');
+
+		  billingSubdistrict = jQuery('form.checkout select#billing_subdistrict');
+
+		  subDistDHK = 
+
+		  billingState.change(function(event) {
+
+		    billingSubdistrict.empty();
+
+		    StateVal = jQuery(this).val();
+
+		    switch (StateVal) {
+		      case "BAG":
+		        subDist = ["Bagerhat Sadar", "Chitalmari", "Fakirhat", "Kachua", "Mollahat", "Mongla", "Morrelganj", "Rampal", "Sarankhola"];
+		        break;
+
+		      case "BAN":
+		        subDist = ["Naikhanchari", "Ali Kadam", "Bandarban Sadar", "Lama", "Rowangchhari", "Ruma", "Thanchi"];
+		        break;
+
+		      case "BAR":
+		        subDist = ["Amtali", "Bamna", "Barguna Sadar", "Betagi", "Patharghata"];
+		        break;
+
+		      case "BARI":
+		        subDist = ["Agailjhara", "Airport Model Thana", "Babuganj", "Bakerganj", "Banaripara", "Barisal Sadar", "Gaurnadi", "Hizla", "Mehendiganj", "Muladi", "Wazirpur"];
+		        break;
+
+		      case "BHO":
+		        subDist = ["Bhola Sadar", "Burhanuddin", "Char Fasson", "Daulatkhan", "Lalmohan", "Manpura", "Tozumoddin"];
+		        break;
+
+		      case "BOG":
+		        subDist = ["Adamdighi", "Bogra Sadar", "Dhunat", "Dupchanchia", "Gabtali", "Kahaloo", "Nandigram", "Sahajanpur", "Sariakandi", "Sherpur", "Shibganj", "Sonatala"];
+		        break;
+
+		      case "BRA":
+		        subDist = ["Akhaura", "Ashuganj", "Bancharampur", "Bijoynagar (New)", "Brahmanbaria Sadar", "Kasba", "Nabinagar", "Nasirnagar", "Sarail"];
+		        break;
+
+		      case "CHA":
+		        subDist = ["Baburhaat", "Chandpur Sadar", "Faridganj", "Haimchar", "Haziganj", "Kachua", "Matlab", "Motlob Uttor", "Shahrasti"];
+		        break;
+
+		      case "CHI":
+		        subDist = ["Agrabad", "Akbarshah", "Anwara", "Bakulia", "Bandar", "Banshkhali", "Bayejid", "Boalkhali", "bohoddarhat", "Chandanaish","Chandgaon R/A", "Chawk Bazar", "Coxs Bazar", "Double Mooring", "Fatikchhari", "Hali Sahar", "Hathazari", "Karnafuli", "Kazirdewri", "Khatungonj", "Khulshi", "Kotoali", "Lal Khan Bazar", "Lohagara", "Love Lane", "Mirsharai", "Muradpur", "Nasirabad", "New Muring", "Pahartali","Panchlaish", "PatharGhata", "Patiya", "Potenga", "Rangunia", "Raozan", "Sandwip", "Satkania", "Sitakunda", "Vujpur"];
+		        break;
+
+		      case "CHU":
+		        subDist = ["Alamdanga", "Chuadanga Sadar", "Damurhuda", "Jibannagar"];
+		        break;
+
+		      case "COM":
+		        subDist = ["Barura", "Brahmanpara", "Burichong", "Chandina", "Chauddagram", "Comilla Sadar", "Daudkandi", "Debidwar", "Homna", "Laksam", "Meghna", "Moinamoti", "Monohargonj", "Muradnagar", "Nangalkot", "Sadar South ", "Titas"];
+		        break;
+
+		      case "COX":
+		        subDist = ["Chakaria", "Cox's Bazar Sadar", "Kutubdia", "Maheshkhali", "Pekua", "Ramu", "Teknaf", "Ukhia", "Ukhia"];
+		        break;
+
+		      case "DHA":
+		        subDist = ["Adabar", "Agargaon", "Airport Thana", "Azimpur", "Badda", "Bakshibazar", "Banani", "BananiDOHS", "Banasree", "Banglabazar", "Banglamotor", "Bangshal", "Baridhara", "BaridharaDOHS", "Basabo", "Basundhara", "BUETcampus", "Cantonment", "Choukbazar", "DakhinKhan", "Dayaganj", "Demra", "Dhamrai", "Dhamrai", "Dhanmondi", "Dohar", "Dohar", "DUcampus", "ElephantRoad", "Eskaton", "Farmgate", "Gabtali", "Gandaria", "Green Road", "Gulistan", "Gulshan-1", "Gulshan-2", "Hatirpul", "Hazaribagh", "Hemayetpur", "Ibrahimpur", "Jatrabari", "Jigatala", "Jurain", "Kadamtoli", "Kafrul", "Kakrail", "Kalabagan", "Kalyanpur", "Kamalapur", "Kamrangirchar", "KathalBagan", "Kawranbazar", "Kazipara", "Keraniganj", "Keraniganj", "Khilgaon", "Khilkhet", "Kotwali", "Lalbag", "Lalmatia", "Maghbazar", "Malibag", "Middle Badda", "Mirpur", "Mirpur-1", "Mirpur-10", "Mirpur-11", "Mirpur-12", "Mirpur-2", "MirpurDOHS", "Moddho Vatara", "Mohakhali", "MohakhaliDOHS", "Mohammadpur", "Motijheel", "Mughda", "Nakhalpara", "Narinda", "Nawabganj", "Nawabganj", "NayaPaltan", "NewEskaton", "NewMarket", "Niketon", "Nikunjo", "Nilkhet", "Pallabi", "Panthapath", "Polashi", "Postagola", "PuranaPaltan", "Purbachal", "Rajabazar", "Rajarbag", "Ramna", "Rampura", "Rayerbazar", "Rupnagar", "Sabujbag", "Sadarghat", "Savar", "Segunbagicha", "Shahbag", "Shahjadpur", "Shajahanpur", "Shampur", "Shantinagar", "Sher-e-BanglaNagar", "Shimrail", "Shukrabad", "Shyamoli", "Siddeswary", "Sutrapur", "Tejgaon", "Tejkunipara", "Tikatuli", "Turag", "Uttara", "UttarKhan", "Wari"];
+		        break;
+
+		      case "DIN":
+		        subDist = ["Biral", "Birampur", "Birganj", "Bochaganj", "Chirirbandar", "Dinajpur Sadar", "Fulbari ", "Ghoraghat", "Hakimpur", "Kaharole", "Khansama", "Manmathapur", "Nawabganj", "Parbatipur", "Setabgonj"];
+		        break;
+
+		      case "FAR":
+		        subDist = ["Alfadanga", "Bhanga", "Boalmari", "Charbhadrasan", "Faridpur Sadar", "Kotoali", "Madhukhali", "Nagarkanda", "Sadarpur", "Saltha"];
+		        break;
+
+		      case "FEN":
+		        subDist = ["Chhagalnaiya", "Daganbhuiyan", "Feni Sadar", "Fulgazi", "Parshuram", "Sonagazi"];
+		        break;
+
+		      case "GAI":
+		        subDist = ["Gaibandha Sadar", "Gobindaganj", "Palashbari", "Phulchhari", "Sadullapur", "Shaghata", "Sundarganj"];
+		        break;
+
+		      case "GAZI":
+		        subDist = ["Gazipur Sadar", "Kaliakair", "Kaliganj", "Kapasia", "Sreepur", "Tongi"];
+		        break;
+
+		      case "GOP":
+		        subDist = ["Gopalganj Sadar", "Kashiani", "Kotalipara", "Moksedpur", "Tungipara"];
+		        break;
+
+		      case "HAB":
+		        subDist = ["Ajmiriganj", "Bahubal", "Baniyachong", "Chunarughat", "Habiganj Sadar", "Lakhai", "Madhabpur", "Nabiganj", "Shayestagonj"];
+		        break;
+
+		      case "JAM":
+		        subDist = ["Baksiganj", "Dewanganj", "Islampur", "Jamalpur Sadar", "Madarganj", "Melandaha", "Sarishabari"];
+		        break;
+
+		      case "JES":
+		        subDist = ["Avoynagar", "Bagherpara", "Benapol", "Chaugachha", "Jessore Sadar", "Jhikargachha", "Keshabpur", "Manirampur", "Sharsha"];
+		        break;
+
+		      case "JHA":
+		        subDist = ["Jhalokati Sadar", "Kathalia", "Nalchity", "Rajapur"];
+		        break;
+
+		      case "JHE":
+		        subDist = ["Harinakunda", "Jhenaidah Sadar", "Kaliganj", "Kotchandpur", "Maheshpur", "Shailkupa"];
+		        break;
+
+		      case "JOY":
+		        subDist = ["Akkelpur", "Joypurhat Sadar", "Kalai", "Khetlal", "Panchbibi"];
+		        break;
+
+		      case "KHA":
+		        subDist = ["Dighinala", "Khagrachhari", "Lakshmichhari", "Mahalchhari", "Manikchhari", "Matiranga", "Panchhari", "Ramgarh"];
+		        break;
+
+		      case "KHU":
+		        subDist = ["Batiaghata", "Dacope", "Dighalia", "Doulotpur", "Dumuria", "Khalishpur", "Khan Jahan Ali", "Khulna", "Koyra", "Paikgachha", "Phultala", "Rupsha", "Sonadanga", "Terokhada"];
+		        break;
+
+		      case "KIS":
+		        subDist = ["Astagram", "Bajitpur", "Bhairab", "Hossainpur", "Itna", "Karimganj", "Katiadi", "Kishoreganj Sadar", "Kuliarchar", "Mithamain", "Nikli", "Pakundia", "Tarail"];
+		        break;
+
+		      case "KUR":
+		        subDist = ["Adit", "Bhurungamari", "Chilmari", "Chilmari", "Chilmari", "Kurigram Sadar", "Nageshwari", "Phulbari", "Rajarhat", "Rajibpur", "Raomari", "Ulipur"];
+		        break;
+
+		      case "KUS":
+		        subDist = ["Bheramara", "Daulatpur", "Islami University Thana", "Khoksa", "Kumarkhali", "Kushtia Sadar", "Mirpur"];
+		        break;
+
+		      case "LAK":
+		        subDist = ["Kamal Nagar", "Lakshmipur Sadar", "Raipur", "Ramganj", "Ramgati"];
+		        break;
+
+		      case "LAL":
+		        subDist = ["Aditmari", "Hatibandha", "Kaliganj", "Lalmonirhat Sadar", "Patgram"];
+		        break;
+
+		      case "MAD":
+		        subDist = ["Kalkini", "Madaripur Sadar", "Rajoir", "Shibchar"];
+		        break;
+
+		      case "MAG":
+		        subDist = ["Magura Sadar", "Mohammadpur", "Shalikha", "Sreepur"];
+		        break;
+
+		      case "MAN":
+		        subDist = ["Daulatpur", "Ghior", "Harirampur", "Manikgonj Sadar", "Saturia", "Shivalaya", "Singair"];
+		        break;
+
+		      case "MEH":
+		        subDist = ["Meherpur Sadar", "Gangni", "Mujibnagar"];
+		        break;
+
+		      case "MOU":
+		        subDist = ["Barlekha", "Juri", "Komolgonj", "komolgonj", "Kulaura", "Maulvibazar Sadar", "Rajnagar", "Sreemangal"];
+		        break;
+
+		      case "MUN":
+		        subDist = ["Gazaria", "Lohaganj", "Munshiganj Sadar", "Sirajdikhan", "Sreenagar", "Tongibari"];
+		        break;
+
+		      case "MYM":
+		        subDist = ["Bhaluka", "Dhobaura", "Fulbaria", "Gaffargaon", "Gauripur", "Haluaghat", "Ishwarganj", "Muktagachha", "Mymensingh Sadar", "Nandail", "Phulpur", "Trishal"];
+		        break;
+
+		      case "NAO":
+		        subDist = ["Atrai", "Badalgachhi", "Dhamoirhat", "Mahadevpur", "Manda", "Naogaon Sadar", "Niamatpur", "Patnitala", "Patnitala", "Porsha", "Raninagar", "Sapahar"];
+		        break;
+
+		      case "NAR":
+		        subDist = ["Kalia", "Lohagara", "Narail Sadar"];
+		        break;
+
+		      case "NARG":
+		        subDist = ["Araihazar", "Bandar", "Fatullah", "Narayanganj Sadar", "Rupganj", "Siddhirganj", "Sonargaon"];
+		        break;
+
+		      case "NARD":
+		        subDist = ["Belabo", "Monohardi", "Narsingdi Sadar", "Palash", "Raipura", "Shibpur", "Shibpur"];
+		        break;
+
+		      case "NAT":
+		        subDist = ["Bagatipara", "Baraigram", "Gurudaspur", "Lalpur", "Natore Sadar", "Noldanga", "Singra"];
+		        break;
+
+		      case "NAW":
+		        subDist = ["Bholahat", "Gomastapur", "Nachole", "Nawabganj Sadar", "Shibganj"];
+		        break;
+
+		      case "NET":
+		        subDist = ["Atpara", "Barhatta", "Durgapur", "Kalmakanda", "Kendua", "Khaliajuri", "Madan", "Mohanganj", "Netrokona Sadar", "Purbadhala"];
+		        break;
+
+		      case "NIL":
+		        subDist = ["Dimla", "Domar", "Jaldhaka", "Kishoreganj", "Nilphamari Sadar", "Saidpur"];
+		        break;
+
+		      case "NOA":
+		        subDist = ["Begumganj", "Chatkhil", "Choumohoni", "Companiganj", "Hatiya", "Kabirhat", "Noakhali Sadar", "Senbagh", "Sonaimuri", "Subarnachar"];
+		        break;
+
+		      case "PAB":
+		        subDist = ["Ataikul", "Atgharia", "Bera", "Bhangura", "Chatmohar", "Faridpur", "Ishwardi", "Pabna Sadar", "Santhia", "Sujanagar"];
+		        break;
+
+		      case "PAN":
+		        subDist = ["Atwari", "Boda", "Debiganj", "Panchagarh Sadar", "Tetulia"];
+		        break;
+
+		      case "PAT":
+		        subDist = ["Bauphal", "Doshmina", "Dumki", "Galachipa", "Kolapara", "Mirzaganj", "Patuakhali Sadar", "Rangabali"];
+		        break;
+
+		      case "PIR":
+		        subDist = ["Bhandaria", "Kawkhali", "Mathbaria", "Nazirpur", "Nesarabad (Swarupkati)", "Pirojpur Sadar", "Rangabali", "Zianagor"];
+		        break;
+
+		      case "RAJB":
+		        subDist = ["Rajbari Sadar", "Goalandaghat", "Pangsha", "Baliakandi"];
+		        break;
+
+		      case "RAJ":
+		        subDist = ["Rajshahi Sadar", "Bagha", "Bagmara", "Boalia", "Charghat", "Cherag Ghat", "Durgapur", "Godagari", "Mohanpur", "Motihar", "Poba", "Puthia", "Shahmokhdum", "Tanore"];
+		        break;
+
+		      case "RAN":
+		        subDist = ["Rangamati Sadar", "Baghaichari", "Barkal", "Belaichari", "Juraichari", "Kaptai", "Kawkhali (Betbunia)", "Langadu", "Nanierchar", "Rajasthali"];
+		        break;
+
+		      case "RANP":
+		        subDist = ["Rangpur Sadar", "Badarganj", "Gangachhara", "Kaunia", "Mithapukur", "Mithapukur", "Pirgachha", "Pirganj", "Taraganj"];
+		        break;
+
+		      case "SAT":
+		        subDist = ["Satkhira Sadar", "Assasuni", "Debhata", "Kalaroa", "Kaliganj", "Patkelghata", "Shyamnagar", "Tala"];
+		        break;
+
+		      case "SHA":
+		        subDist = ["Shariatpur Sadar", "Bhedarganj", "Damudya", "Gosairhat", "Jajira", "Naria", "palong", "sokhipur"];
+		        break;
+
+		      case "SHE":
+		        subDist = ["Sherpur Sadar", "Jhenaigati", "Nakla", "Nalitabari", "Sreebardi"];
+		        break;
+
+		      case "SIR":
+		        subDist = ["Sirajgonj Sadar", "Belkuchi", "Chauhali", "Kamarkhanda", "Kazipur", "Raiganj", "Ranigonj", "Shahjadpur", "Solonga", "Tarash", "Ullahpara"];
+		        break;
+
+		      case "SUN":
+		        subDist = ["Sunamganj Sadar", "Bishwamvarpur", "Chhatak", "Derai", "Dharampasha", "Dharampasha", "Dowarabazar", "Jagannathpur", "Jamalganj", "Sullah", "Tahirpur"];
+		        break;
+
+		      case "SYL":
+		        subDist = ["Sylhet Sadar", "Airport", "Balaganj", "Beanibazar", "Bishwanath", "Companiganj", "Dokkhin Surma", "Fenchuganj", "Golapganj", "Gowainghat", "Jaintiapur", "Kanaighat", "Osmaninagar", "Zakiganj"];
+		        break;
+
+		      case "TAN":
+		        subDist = ["Tangail Sadar", "Basail", "Bhuapur", "Delduar", "Dhonbari", "Ghatail", "Gopalpur", "Kalihati", "Madhupur", "Mirzapur", "Nagarpur", "Sakhipur"];
+		        break;
+
+		      case "THA":
+		        subDist = ["Baliadangi", "Haripur", "Pirganj", "Ranisankail", "Ranisankail", "Thakurgaon Sadar"];
+		        break;
+
+		      default:
+		        subDist = subDistDHK;
+		        break;
+		    }
+
+		    for ( i = 0; i < subDist.length; i++ ) {
+		      subDistVal = subDist[i].toLowerCase().replace(" ", "-");
+		      subDistOut = '<option value="'+ subDistVal +'">' + subDist[i] + '</option>';    
+		      billingSubdistrict.append( subDistOut );
+		    }
+
+		  });
+
+		});
+	</script>
+</body>
+</html>

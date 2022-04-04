@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Random Image Change</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		header{
+			background-color: #efefef;
+			width: 100%;
+			display: block;
+			height: 100vh;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	</style>
+</head>
+<body>
+	<header class="heroImage"></header>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			var imageSource = [
+			  "img/Blind-Rhino-0018.jpg",
+			  "img/Blind-Rhino-0297.jpg",
+			  "img/Blind-Rhino-0437.jpg",
+			  "img/Blind-Rhino-0466.jpg",
+			  "img/Blind-Rhino-0565.jpg",
+			  "img/Blind-Rhino-0604.jpg",
+			  "img/DSC_4875.jpg",
+			  "img/DSC_4877.jpg",
+			  "img/DSC_4904.jpg",
+			  "img/DSC_4936.jpg",
+			  "img/DSC_6928.jpg",
+			  "img/DSC_7104.jpg",
+			  "img/DSC_7158.jpg",
+			  "img/DSC_7197.jpg",
+			  "img/DSC_7444.jpg",
+			];
+			var x = Math.floor(imageSource.length * Math.random());
+			jQuery('.heroImage').css('background-image', 'url('+imageSource[x]+')');
+		});
+	</script>
+</body>
+</html>

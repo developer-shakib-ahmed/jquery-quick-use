@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Class</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/jquery.png">
+<style type="text/css">
+	
+div.head {
+    width: 100px;
+    height: 100px;
+    background: #F6D0A6;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+}
+span.left_eye {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    background: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+span.left_eye:after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 5px;
+    height: 5px;
+    background: #000;
+    border-radius: 50%;
+}
+span.right_eye {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    background: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+span.right_eye:after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 5px;
+    height: 5px;
+    background: #000;
+    border-radius: 50%;
+}
+
+
+span.smile {
+    position: absolute;
+    bottom: 28px;
+    width: 30px;
+    height: 6px;
+    background: #000000;
+    left: 36px;
+    border-radius: 0px 0px 20px 20px;
+}
+span.mouth {
+    position: absolute;
+    bottom: 20px;
+    width: 30px;
+    height: 16px;
+    background: #000000;
+    left: 36px;
+    border-radius: 0px 0px 20px 20px;
+}
+span.mouth:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 7px;
+    width: 16px;
+    height: 3px;
+    background: #fff;
+    border-radius: 0px 0px 30px 30px;
+}
+span.mouth:after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 8px;
+    width: 14px;
+    height: 3px;
+    background: #ff0000;
+    border-radius: 0px 0px 30px 30px;
+}
+
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1><a title="Previous" href="remove-empty.html"><</a> <img src="assets/img/jquery.png" alt="jquery logo">Practice Display<a title="Next" href="dimension.html">></a></h1>
+		</div><!-- End .header -->
+
+		<div class="content">
+			<div class="work_title"><h3>Add Class, Remove Class, Toggle Class On Click Event</h3></div>
+
+			<div class="buttons">
+				<button id="add_class">Add Class</button>
+				<button id="remove_class">Remove Class</button>
+				<button id="toggle_class">Toggle Class</button>
+			</div>
+
+			<div class="display">
+				<div class="head">
+					<span class="left_eye"></span>
+					<span class="right_eye"></span>
+					<span class="smile"></span>
+				</div>
+			</div>
+		</div><!-- End .content -->
+
+		<script type="text/javascript" src="assets/js/jquery-min-3.1.1.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('#add_class').click(function(){
+					jQuery('.smile').addClass('mouth');
+				});
+				jQuery('#remove_class').click(function(){
+					jQuery('.smile').removeClass('mouth');
+				});
+				jQuery('#toggle_class').click(function(){
+					jQuery('.smile').toggleClass('mouth');
+				});
+			});
+		</script>
+
+		<div class="footer">
+			<a href="http://www.shakibahmed.com" target="_blank"><img src="assets/img/shakibahmed-white.png" alt="web logo"></a>
+		</div><!-- End .footer -->
+	</div><!-- End .wrap -->
+</body>
+</html>

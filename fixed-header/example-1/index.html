@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Header Fixed</title>
+	<style>
+
+
+/*.sticky-header{
+	background: #fcfcfc;
+	padding: 10px;
+}
+.fixed{
+	position: fixed;
+	top:0;
+	width:100%;
+}*/
+
+body {
+    padding: 0;
+    margin: 0
+}
+
+header {
+    background: transparent url('http://adventure.nationalgeographic.com/2008/11/ecotourism/lodge-jungle.jpg') 0 0;
+    height: 100px;
+}
+
+h4 {
+   font-weight: bold;
+    
+}
+
+p {
+    margin: 20px 0;
+}
+
+section {
+    padding: 20px 0;
+}
+
+.wrapper {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    padding: 28px 0 0 0;
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    right; 0;
+    top: 100px;
+    background: green;
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+    height: 30px;
+    z-index: 100;
+}
+
+nav a {
+    font-family: helvetica;
+    color: #ffffff;
+    padding: 2px; 4px;
+    display: block;
+    float: left;
+    text-decoration: none;
+    margin-right: 4px;
+}
+
+nav a:hover,
+nav a.active {
+    background: white;
+    color: green
+}
+
+.fixed {
+    position: fixed;
+    top: 0
+} 
+
+	</style>
+</head>
+<body>
+
+<!-- 	<header class="sticky-header">
+		<p>This is header that will be fixed after ScrollUp</p>
+	</header>
+	<div style="width:200px; margin: 0 auto;">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+	</div> -->
+
+<header></header>
+
+<nav>        
+    <a href="#" data-scroll="top">TOP</a>        
+    <a href="#" data-scroll="news">NEWS</a>        
+    <a href="#" data-scroll="products">PRODUCTS</a>        
+    <a href="#" data-scroll="contact">CONTACT</a>    
+</nav>
+
+<div class="wrapper">
+        
+    <section id="" data-anchor="top">
+        <h4>TOP</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat eleifend orci, eget aliquam dolor elementum vel. Aliquam eu nulla eros, et tincidunt felis. Pellentesque congue sodales eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla suscipit nulla vel nisi fermentum ultricies. Integer ligula elit, gravida ac pretium nec, eleifend ultrices purus. Duis cursus orci et urna accumsan tempor. Nunc mattis tincidunt nulla, id porta velit sollicitudin blandit.</p>
+
+            <p>Duis vel augue quis elit ultrices fermentum ut eu risus. Mauris dictum nisl eget lorem pulvinar sit amet bibendum nunc scelerisque. Suspendisse ac libero magna, at imperdiet leo. Pellentesque vulputate venenatis vestibulum. Aenean varius turpis quis sem adipiscing volutpat. Fusce scelerisque iaculis augue, eget fringilla velit mattis nec. Maecenas sagittis dolor eget felis cursus imperdiet. Morbi ut dui libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet mi ac diam semper hendrerit a id tellus. Morbi accumsan magna sit amet velit ultricies ut dapibus justo rutrum. Ut et ante dui, vel pellentesque velit.</p>             
+    </section>
+    
+    <section id="" data-anchor="news">
+        <h4>NEWS</h4>        
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat eleifend orci, eget aliquam dolor elementum vel. Aliquam eu nulla eros, et tincidunt felis. Pellentesque congue sodales eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla suscipit nulla vel nisi fermentum ultricies. Integer ligula elit, gravida ac pretium nec, eleifend ultrices purus. Duis cursus orci et urna accumsan tempor. Nunc mattis tincidunt nulla, id porta velit sollicitudin blandit.</p>
+
+            <p>Duis vel augue quis elit ultrices fermentum ut eu risus. Mauris dictum nisl eget lorem pulvinar sit amet bibendum nunc scelerisque. Suspendisse ac libero magna, at imperdiet leo. Pellentesque vulputate venenatis vestibulum. Aenean varius turpis quis sem adipiscing volutpat. Fusce scelerisque iaculis augue, eget fringilla velit mattis nec. Maecenas sagittis dolor eget felis cursus imperdiet. Morbi ut dui libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet mi ac diam semper hendrerit a id tellus. Morbi accumsan magna sit amet velit ultricies ut dapibus justo rutrum. Ut et ante dui, vel pellentesque velit.</p>             
+    </section>
+    
+    <section id="" data-anchor="products">
+        <h4>PRODUCTS</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat eleifend orci, eget aliquam dolor elementum vel. Aliquam eu nulla eros, et tincidunt felis. Pellentesque congue sodales eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla suscipit nulla vel nisi fermentum ultricies. Integer ligula elit, gravida ac pretium nec, eleifend ultrices purus. Duis cursus orci et urna accumsan tempor. Nunc mattis tincidunt nulla, id porta velit sollicitudin blandit.</p>
+
+            <p>Duis vel augue quis elit ultrices fermentum ut eu risus. Mauris dictum nisl eget lorem pulvinar sit amet bibendum nunc scelerisque. Suspendisse ac libero magna, at imperdiet leo. Pellentesque vulputate venenatis vestibulum. Aenean varius turpis quis sem adipiscing volutpat. Fusce scelerisque iaculis augue, eget fringilla velit mattis nec. Maecenas sagittis dolor eget felis cursus imperdiet. Morbi ut dui libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet mi ac diam semper hendrerit a id tellus. Morbi accumsan magna sit amet velit ultricies ut dapibus justo rutrum. Ut et ante dui, vel pellentesque velit.</p>             
+    </section>
+    
+    <section id="" data-anchor="contact">
+        <h4>CONTACT</h4>        
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat eleifend orci, eget aliquam dolor elementum vel. Aliquam eu nulla eros, et tincidunt felis. Pellentesque congue sodales eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla suscipit nulla vel nisi fermentum ultricies. Integer ligula elit, gravida ac pretium nec, eleifend ultrices purus. Duis cursus orci et urna accumsan tempor. Nunc mattis tincidunt nulla, id porta velit sollicitudin blandit.</p>
+
+            <p>Duis vel augue quis elit ultrices fermentum ut eu risus. Mauris dictum nisl eget lorem pulvinar sit amet bibendum nunc scelerisque. Suspendisse ac libero magna, at imperdiet leo. Pellentesque vulputate venenatis vestibulum. Aenean varius turpis quis sem adipiscing volutpat. Fusce scelerisque iaculis augue, eget fringilla velit mattis nec. Maecenas sagittis dolor eget felis cursus imperdiet. Morbi ut dui libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet mi ac diam semper hendrerit a id tellus. Morbi accumsan magna sit amet velit ultricies ut dapibus justo rutrum. Ut et ante dui, vel pellentesque velit.</p>             
+    </section>
+</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		/* START HEADER ONLY STICKY ON SCROLL UP */
+		// jQuery ( function($) {
+
+		// var tempscroll = 0;
+		// $(window).scroll(function(event){
+		//    var scrollTop = $(this).scrollTop();
+		//    if (scrollTop > tempscroll){ //Remove fixed positioning when scrolling down
+		//       if ( $('.x-navbar').hasClass('x-navbar-fixed-top') ) $('.x-navbar').removeClass('x-navbar-fixed-top')
+		//    } 
+		//    tempscroll = scrollTop;
+		// });
+
+		// } );
+		/* END HEADER ONLY STICKY ON SCROLL UP */
+
+
+		// jQuery(document).ready(function(){
+		// 	var tempscroll = 0;
+		// 	jQuery(window).scroll(function(){
+		// 	  if (jQuery(window).scrollTop() < tempscroll) {
+		// 	    jQuery('.sticky-header').addClass('fixed');
+		// 	   }
+		// 	   else {
+		// 	    jQuery('.sticky-header').removeClass('fixed');
+		// 	   }
+		// 	   tempscroll = jQuery(window).scrollTop();
+		// 	});
+		// });
+
+
+		/*
+		http://jsfiddle.net/gUWdJ/3/ 
+		https://bigspotteddog.github.io/ScrollToFixed/
+		*/
+		jQuery('nav a').on('click', function() {
+
+		    var scrollAnchor = jQuery(this).attr('data-scroll'),
+		        scrollPoint = jQuery('section[data-anchor="' + scrollAnchor + '"]').offset().top - 0;
+
+		    jQuery('body,html').animate({
+		        scrollTop: scrollPoint
+		    }, 500);
+
+		    return false;
+
+		});
+
+
+		jQuery(window).scroll(function() {
+		    var windscroll = jQuery(window).scrollTop();
+		    if (windscroll >= 100) {
+		        jQuery('nav').addClass('fixed');
+		        jQuery('.wrapper section').each(function(i) {
+		            if (jQuery(this).position().top <= windscroll - 20) {
+		                jQuery('nav a.active').removeClass('active');
+		                jQuery('nav a').eq(i).addClass('active');
+		            }
+		        });
+
+		    } else {
+		        jQuery('nav').removeClass('fixed');
+		        jQuery('nav a.active').removeClass('active');
+		        jQuery('nav a:first').addClass('active');
+		    }
+
+		}).scroll();
+
+	</script>
+	
+</body>
+</html>

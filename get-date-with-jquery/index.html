@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date</title>
+</head>
+<body>
+
+	<div id="today"></div>
+
+	<br>
+	<br>
+	<br>
+
+	<input type="date">
+	<button>Send</button>
+	<br>
+	<br>
+	<div id="show"></div>
+
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var today = new Date();
+		var d = today.getDay();
+		var dd = today.getDate();
+		var mm = today.getMonth(); //January is 0!
+		var yyyy = today.getFullYear();
+
+		var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+		var day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+		today = day[d] + ', ' + months[mm] + ', ' + dd + ', ' + yyyy;
+
+		document.getElementById("today").innerHTML = today;	
+
+		jQuery('button').click(function(){
+			var fullDate = new Date(jQuery("input[type='date']").val());
+			var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			jQuery('div#show').text(months[fullDate.getMonth()] + " " + fullDate.getDate() +", " + fullDate.getFullYear());
+		});
+	</script>
+</body>
+</html>

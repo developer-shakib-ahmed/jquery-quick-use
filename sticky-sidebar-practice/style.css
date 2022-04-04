@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+img{
+    max-width: 100%;
+    display: block;
+    margin: 0px auto;
+}
+a{
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+}
+a:hover, a:focus{
+    color:#555;
+    text-decoration: underline;
+}
+ul{
+    margin: 0 0 25px 0;
+    padding:0;
+}
+ul li{
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+div.display{
+    position: fixed;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 999999;
+}
+
+div.display span{
+    display: inline-block;
+    padding: 5px 10px;
+    background: #222;
+    color: #ddd;
+    margin: 5px;
+}
+
+
+div#content {
+    border: 3px solid #ddd;
+}
+
+div#sidebar {
+    border: 3px solid #444;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+div#sidebar h2.page-header {
+
+}
+
+section#one div.container {
+    position: relative;
+}
+
+section#one div.container div.row {
+    position: relative;
+}
+
+section{
+    margin-top: 15px;
+}
+section#three p{
+    margin-bottom: 0px;
+}
+section#three .well{
+    overflow: hidden;
+}
+
+footer{
+    padding-top: 10px;
+    margin-top: 15px;
+}

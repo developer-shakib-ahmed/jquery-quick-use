@@ -1,0 +1,11 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+div#Content{
+	border:1px solid #aaa;
+}
+div#Widget{
+	border:1px solid #ddd;
+}

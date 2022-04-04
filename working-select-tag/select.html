@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select Reorder</title>
+</head>
+<body>
+	<select name="" id="">
+		<option value="default">Select Option</option>
+		<option value="two">Two</option>
+		<option value="three">Three</option>
+		<option value="four">Four</option>
+	</select>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			// var $sel = $('select'),
+			//     $o = $sel.children().toArray().reverse();
+			// $sel.append($o); 
+			// [0].selectedIndex = 0;
+
+			jQuery('select option:eq(0)').remove();
+			jQuery('select option:eq(0)').insertAfter($('select option:eq(1)'));
+			jQuery('select option:eq(0)').attr("selected", "selected");
+		});
+	</script>
+</body>
+</html>

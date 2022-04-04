@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery-Find</title>
+</head>
+<body>
+
+	<ul>
+		<li>Item - 1</li>
+		<li>Item - 2</li>
+		<li>Item - 3</li>
+		<li>Item - 4</li>
+		<li>Item - 5 <span>Hi</span></li>
+	</ul>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			var ul = jQuery('ul');
+			ul.find('span').css('color', 'red');
+		});
+	</script>
+</body>
+</html>

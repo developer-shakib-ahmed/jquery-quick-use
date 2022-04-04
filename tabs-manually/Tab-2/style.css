@@ -1,0 +1,99 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+div.container{
+	margin: 10px auto;
+	width: 1170px;
+	overflow: hidden;
+	display: block;
+	padding: 25px;
+	border: 1px solid #000;
+}
+
+div.boxes {
+    overflow: hidden;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+div.boxes div.inner {
+    padding: 20px;
+    background: #ddd;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 100%;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+div.boxes div.inRight {
+    animation-name: inRight;
+}
+
+div.boxes div.inLeft {
+    animation-name: inLeft;
+}
+
+div.boxes div.inner.active {
+    position: relative;
+    left: auto;
+}
+
+div#inner-2{
+	background: #999;
+}
+
+div.boxes div.box-1 {
+    border: 2px solid #000;
+    float: left;
+    width: 68%;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 35px;
+}
+
+div.boxes div.box-2 {
+    float: right;
+    height: 200px;
+    width: 30%;
+    border: 2px solid #50cc97;
+}
+
+div.buttons button{
+	display: inline-block;
+	padding: 5px 10px;
+	cursor: pointer;
+	margin-right: 8px;
+	outline: 0;
+}
+
+div#buttonsTop button.active {
+    border-color: red;
+}
+
+div.boxes div.inner p{
+    font-size: 40px;
+}
+
+@keyframes inRight {
+    0% {
+        transform: translate3d( 100%, 0, 0 );
+    }
+    100% {
+        transform: translate3d( 0, 0, 0 );
+    }
+}
+
+@keyframes inLeft {
+    0% {
+        transform: translate3d( -100%, 0, 0 );
+    }
+    100% {
+        transform: translate3d( 0, 0, 0 );
+    }
+}

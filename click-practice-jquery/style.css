@@ -1,0 +1,280 @@
+* {margin:0;padding:0;}
+body {font-family:arial;font-size:14px;line-height:22px;color:#aaa;background: #ddd;}
+ul {margin:0;padding:0;list-style: none;}
+a {text-decoration: none;display: block;}
+
+
+/*
+**************************************************
+*Start All kinds Of CSS
+**************************************************
+*/
+
+.container{
+  width: 70%;
+  margin: 5px auto;
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  padding: 10px 10px;
+}
+/*.row{width: 100%;overflow: hidden;}*/
+/*
+**************************************************
+*demo_panel_area
+**************************************************
+*/
+.demo_panel{
+  float: left;
+  width: 20%;
+  height:510px;
+  background: #aaa;
+  overflow: hidden;
+  color:#000;
+}
+.all_equal{
+  display: block;
+  width: 35px;
+  height: 35px;
+  float: left;
+  background: #000;
+  cursor: pointer;
+  margin: 7%;
+}
+.red_color{background:red;}
+.green_color{background:green;}
+.orange_color{background:orange;}
+.blue_color{background:blue;}
+.pink_color{background:pink;}
+.yallow_color{background:yellow;}
+.darkorchid_color{background:darkorchid;}
+.aqua_color{background:aqua;}
+.maroon_color{background:maroon;}
+
+
+/*
+**************************************************
+*display_area
+**************************************************
+*/
+.display{
+  float: right;
+  width: 78%;
+  margin-left: 2%;
+  background: #aaa;
+  overflow: hidden;
+  color: #000;
+}
+.all_play{
+	width:95%;overflow: hidden;display: block;margin:0px auto 20px;background: #000;min-height:50px;
+}
+
+.red_play{background:red;margin-top:20px;}
+.red_play p{
+  text-align: center;
+  font-size: 23px;
+  padding-top: 12px;
+  color:#fff;
+}
+.green_play{background:green;}
+.green_play p{
+  color: #DACFCF;
+  font-size: 20px;
+  padding-top: 12px;
+  display: block;
+  text-align: center;
+  word-spacing: 40px;
+}
+
+.blue_play{background:blue;}
+.pink_play{background:pink;}
+.yallow_play{background:yellow;}
+.darkorchid_play{background:darkorchid;}
+.aqua_play{background:aqua;margin-bottom:20px;}
+.maroon_play{background:maroon;}
+/*
+**************************************************
+*show_hide_botton_area
+**************************************************
+*/
+.show_hide_botton_area{
+  width: 85%;
+  background: #888;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  color: #DACFCF;
+  padding: 10px 7px;
+}
+.show_botton{float:left;width: 48%;background: #000;display: block;overflow: hidden;text-align: center;cursor:pointer;}
+.show_botton p{}
+.hide_botton{float: right;width: 48%;background: #000;display: block;overflow: hidden;text-align: center;cursor:pointer;}
+.hide_botton p{}
+/*
+**************************************************
+*after jQurey addClass CSS
+**************************************************
+*/
+.other_color{background: #000;}
+.other_color_two{background: #00adef;}
+/*
+**************************************************
+*hide and show area css
+**************************************************
+*/
+.read_more_botton_area{
+  width: 75%;
+  background: #888;
+  overflow: hidden;
+  margin: 10px auto;
+  color: #DACFCF;
+  padding: 10px 12px;
+  border-radius: 30px; 
+}
+.read_more_botton{background: #000;text-align: center;border-radius: 15px;cursor: pointer;}
+.read_more_botton p{}
+.Others_r_m_botton {
+background: #117BA3;text-align: center;border-radius: 15px;cursor: pointer;display:none;
+}
+
+.cross_botton {
+  width: 22px;
+  background: #00adef;
+  border-radius: 50px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #4F4F4F;
+  font-size: 20px;
+  padding: 7px;
+  text-align: center;
+}
+.cross_botton_two {
+  width: 22px;
+  background: #00adef;
+  border-radius: 50px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 20px;
+  padding: 7px;
+  text-align: center;
+}
+.demo_box {
+  overflow: hidden;
+  background:url(pattern.png) #3D3D3D;
+  height: 165px;
+  width: 130px;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: fixed;
+  top: 40px;
+  left: 30px;
+}
+.color_panel {
+  background: #ddd;
+  overflow: hidden;
+  width: 80%;
+  margin: 10px auto;
+  padding-top: 6px;
+}
+.change_color {
+  background: red;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  margin-left:5px;
+  display: inline-block;
+  cursor: pointer;
+  border: 3px solid #EE9E9E;
+}
+.change_color_two {
+  background: blue;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  margin-left: 5px;
+  display: inline-block;
+  cursor:pointer;  
+  border: 3px solid #A49EEE;  
+}
+.change_color_three {
+  background: gray;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  margin-left: 5px;
+  display: inline-block;  
+  cursor:pointer;  
+  border: 3px solid #C1C1C1;  
+}
+
+.bg_panel {
+background:#aaa;
+overflow:hidden;
+width:80%;
+margin:10px auto;
+}
+.change_bg {
+  background:url(pattern.png);
+  background-color: #698EAF;
+  height: 35px;
+  width: 80%;
+  margin: 10px auto;
+  cursor:pointer;
+}
+.change_bg_two {
+  background:url(pattern.png);
+  background-color: #AF9869;
+  height: 35px;
+  width: 80%;
+  margin: 10px auto;
+  cursor:pointer;
+}
+
+
+
+.tooltip {display:none;
+  width: 130px;
+  height: 25px;
+  background: #000;
+  position: relative;
+  margin-top: -25px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;  
+  color:#fff;
+  text-align:center;
+}
+.tooltip:after{
+  content: "";
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #000;
+  width: 0px;
+  top: 25px;
+  left: 55px;  
+}
+.pink_play:hover .blue_play{background-color:red;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

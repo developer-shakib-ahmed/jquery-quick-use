@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Header Fixed</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+.sticky-header {
+    background: #ddd;
+    padding: 10px;
+}
+.fixed{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index: 999;
+}
+</style>
+</head>
+<body>
+
+	<header class="sticky-header">
+		<p>This is header that will be fixed after ScrollUp</p>
+	</header>
+	<div style="width:200px; margin: 0 auto;">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita dolor corporis illum, assumenda consequatur ut suscipit perspiciatis possimus consectetur facere minima eius, maiores fugiat, quaerat quis inventore dolorum ullam eos a nobis. Id iste qui, nostrum vitae non voluptatibus in ab placeat mollitia! Dolorum iusto nesciunt illum labore magnam, quibusdam ducimus odit accusamus, repellendus quas saepe, nulla! Consequuntur enim non accusantium, debitis maxime quis. Eveniet dolor dicta quibusdam, accusamus nisi quasi voluptates beatae fuga magni consectetur fugit ipsum enim labore. Suscipit facere animi numquam sapiente, quae, ex obcaecati quam nesciunt sint, deserunt quaerat cupiditate unde excepturi necessitatibus dolor eius.</p>
+	</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		var scrollPositon = 0;
+		$(window).scroll(function(){
+		  var sticky = $('.sticky-header'), scroll = $(window).scrollTop();
+		  if (scroll < scrollPositon) sticky.addClass('fixed') ; else sticky.removeClass('fixed');
+		  scrollPositon = scroll;
+		});
+	</script>
+	
+</body>
+</html>

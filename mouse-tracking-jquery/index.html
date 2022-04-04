@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Mouse Tracking</title>
+	<style type="text/css">
+		body {
+		  margin: 0;
+		  background-color: silver;
+		}
+
+		#tracking-area {
+		  position: relative;
+		  
+		  width: 340px;
+		  height: 340px;
+		  
+		  margin: 50px auto;
+		  
+		  border: 1px solid gray;
+		}
+
+		#transformation-area {
+		  position: absolute;
+		  top: 20px;
+		  left: 20px;
+		  
+		  width: 300px;
+		  height: 300px;
+		  
+		  background-image: url('smiles.jpg');
+		  background-size: cover;
+
+		  /*transition: 0.2s;*/
+		}
+	</style>
+</head>
+<body>
+
+	<div id="tracking-area">
+	  <div id="transformation-area">
+
+	  </div>
+	</div>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		// Credit: https://codepen.io/eduard-malakhov/pen/mmJwbZ
+
+		//  The following two numbers define the angles (in degrees)
+		//  that the transformation area will be rotated at about
+		//  X and Y axes when the cursor reaches the right (for Y) 
+		//  and the top (for X) borders of the tracking area.
+		var maxRotationDegreesX = 10;
+		var maxRotationDegreesY = 10;
+
+		//  This effectively defines the distance along X axis between
+		//  the reference point and the projection plane. The greater the 
+		//  number, the greater the transformation area's projection
+		//  is deformed due to perspective.
+		var perspectivePx = 600;
+
+		$(document).ready(function () {   
+		    //  These variables are requried to translate screen coordinates 
+		    //  supplied by mouse event into the coordinate system with 
+		    //  its reference point placed in the center of the tracking area.
+		    var trackingAreaShiftX = $("#tracking-area").offset().left;
+		    var trackingAreaShiftY = $("#tracking-area").offset().top;
+
+		    var halfTrackingAreaWidth = $("#tracking-area").width() / 2;
+		    var halfTrackingAreaHeight = $("#tracking-area").height() / 2;
+
+		    var mouseCoordinateCorrectionX = trackingAreaShiftX + halfTrackingAreaWidth;
+		    var mouseCoordinateCorrectionY = trackingAreaShiftY + halfTrackingAreaHeight;
+
+		    $("body").on("mousemove", function () {
+		        //  Translate cooridnates of the mouse ponter 
+		        var x = event.clientX - mouseCoordinateCorrectionX;
+		        var y = event.clientY - mouseCoordinateCorrectionY;
+		        //  Calculate degrees of rotation with respect to their maximum values
+		        var rotationY = x * maxRotationDegreesX / halfTrackingAreaWidth;
+		        var rotationX = -y * maxRotationDegreesY / halfTrackingAreaHeight;
+		        //  Construct CSS transform setting string
+		        var transform = `perspective(${perspectivePx}px) rotate3d(1, 0, 0, ${rotationX}deg) rotate3d(0, 1, 0, ${rotationY}deg)`;
+		        //  Apply the transformation
+		        $("#transformation-area").css("-webkit-transform", transform);
+		        $("#transformation-area").css("-moz-transform", transform);
+		        $("#transformation-area").css("-ms-transform", transform);
+		        $("#transformation-area").css("-o-transform", transform);
+		        $("#transformation-area").css("transform", transform);
+		    });
+		});
+	</script>
+</body>
+</html>
